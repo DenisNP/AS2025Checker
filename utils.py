@@ -6,7 +6,7 @@ from typing import List, Any, Dict
 from models import Orders, WorkPlan, InputData, TaskDetails
 
 
-def aggregate_work_plan(orders: Orders, work_plan: WorkPlan, input_data: InputData) -> Dict[str, TaskDetails]:
+def aggregate_work_plan(orders: Orders, work_plan: WorkPlan, input_data: InputData) -> (Dict[str, TaskDetails], int):
     # 1. Создаём словари для быстрого поиска
     task_dict = {}
     for order in orders.root:
@@ -17,6 +17,8 @@ def aggregate_work_plan(orders: Orders, work_plan: WorkPlan, input_data: InputDa
 
     # 2. Перебираем все назначенные задачи, извлекая по пути работников и заказы
     result = {}
+    min_date = date.max
+    max_date = date.min
     for assigned_task in work_plan.root:
         if assigned_task.taskId in task_dict:
             task, order = task_dict[assigned_task.taskId]
@@ -28,10 +30,16 @@ def aggregate_work_plan(orders: Orders, work_plan: WorkPlan, input_data: InputDa
                     order=order,
                     worker=worker
                 )
+                if assigned_task.start < min_date:
+                    min_date = assigned_task.start
+                if assigned_task.end > max_date:
+                    max_date = assigned_task.end
+
+    total_days = (max_date - min_date).days
 
     print(f"Всего задач: {len(task_dict)}")
     print(f"Задач в плане работ: {len(result)}")
-    return result
+    return result, total_days
 
 
 def is_weekend(d: date) -> bool:
