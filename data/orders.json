@@ -1,0 +1,131 @@
+[
+  {
+    "id": "ORDER_ID_IGIXIOUS",
+    "tasks": [
+      {
+        "id": "TASK_ID_6UCS4PNV",
+        "workTypeId": "DataAnalysis",
+        "dependsOn": [],
+        "baseDuration": 5
+      },
+      {
+        "id": "TASK_ID_Z5LETCKN",
+        "workTypeId": "UIDesign",
+        "dependsOn": ["TASK_ID_6UCS4PNV"],
+        "baseDuration": 2
+      }
+    ],
+    "deadline": "2025-04-30",
+    "earning": 2430,
+    "penaltyByDay": 243
+  },
+  {
+    "id": "ORDER_ID_P8CZ2PY1",
+    "tasks": [
+      {
+        "id": "TASK_ID_C6CFCD4G",
+        "workTypeId": "DataAnalysis",
+        "dependsOn": [],
+        "baseDuration": 5
+      },
+      {
+        "id": "TASK_ID_XL6WFX6R",
+        "workTypeId": "UIDesign",
+        "dependsOn": ["TASK_ID_C6CFCD4G"],
+        "baseDuration": 1
+      },
+      {
+        "id": "TASK_ID_OBCPVU69",
+        "workTypeId": "DevCSharp",
+        "dependsOn": ["TASK_ID_C6CFCD4G", "TASK_ID_XL6WFX6R"],
+        "baseDuration": 2
+      }
+    ],
+    "deadline": "2025-04-30",
+    "earning": 2742,
+    "penaltyByDay": 371
+  },
+  {
+    "id": "ORDER_ID_RRW1G66F",
+    "tasks": [
+      {
+        "id": "TASK_ID_QMVSST9M",
+        "workTypeId": "DataAnalysis",
+        "dependsOn": [],
+        "baseDuration": 5
+      },
+      {
+        "id": "TASK_ID_OO1Q0GRS",
+        "workTypeId": "UIDesign",
+        "dependsOn": ["TASK_ID_QMVSST9M"],
+        "baseDuration": 1
+      }
+    ],
+    "deadline": "2025-04-30",
+    "earning": 3909,
+    "penaltyByDay": 648
+  },
+  {
+    "id": "ORDER_ID_8W4X3MD4",
+    "tasks": [
+      {
+        "id": "TASK_ID_JP8M8ZHN",
+        "workTypeId": "DataAnalysis",
+        "dependsOn": [],
+        "baseDuration": 5
+      },
+      {
+        "id": "TASK_ID_T4JJF1VR",
+        "workTypeId": "UIDesign",
+        "dependsOn": ["TASK_ID_JP8M8ZHN"],
+        "baseDuration": 6
+      }
+    ],
+    "deadline": "2025-04-30",
+    "earning": 4074,
+    "penaltyByDay": 801
+  },
+  {
+    "id": "ORDER_ID_N49NOO8B",
+    "tasks": [
+      {
+        "id": "TASK_ID_RMI9FKIJ",
+        "workTypeId": "DataAnalysis",
+        "dependsOn": [],
+        "baseDuration": 6
+      },
+      {
+        "id": "TASK_ID_XP19RYJZ",
+        "workTypeId": "UIDesign",
+        "dependsOn": ["TASK_ID_RMI9FKIJ"],
+        "baseDuration": 7
+      },
+      {
+        "id": "TASK_ID_Z6Y7NDIF",
+        "workTypeId": "DevCSharp",
+        "dependsOn": ["TASK_ID_RMI9FKIJ", "TASK_ID_XP19RYJZ"],
+        "baseDuration": 1
+      },
+      {
+        "id": "TASK_ID_OOQVOWD4",
+        "workTypeId": "DevJava",
+        "dependsOn": [
+          "TASK_ID_RMI9FKIJ", "TASK_ID_XP19RYJZ", "TASK_ID_Z6Y7NDIF"
+        ],
+        "baseDuration": 1
+      },
+      {
+        "id": "TASK_ID_EW5II3WZ",
+        "workTypeId": "DevJS",
+        "dependsOn": [
+          "TASK_ID_RMI9FKIJ", "TASK_ID_XP19RYJZ", "TASK_ID_Z6Y7NDIF",
+          "TASK_ID_OOQVOWD4"
+        ],
+        "baseDuration": 5
+      }
+    ],
+    "deadline": "2025-04-30",
+    "earning": 4199,
+    "penaltyByDay": 719
+  }
+]

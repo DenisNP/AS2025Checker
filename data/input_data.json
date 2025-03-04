@@ -1,0 +1,163 @@
+{
+  "workTypes": [
+    {
+      "name": "Разработка на C#",
+      "id": "DevCSharp"
+    },
+    {
+      "name": "Разработка на Python",
+      "id": "DevPython"
+    },
+    {
+      "name": "Разработка на JavaScript",
+      "id": "DevJS"
+    },
+    {
+      "name": "Разработка на Java",
+      "id": "DevJava"
+    },
+    {
+      "name": "Тестирование ПО",
+      "id": "QA"
+    },
+    {
+      "name": "Дизайн интерфейсов",
+      "id": "UIDesign"
+    },
+    {
+      "name": "DevOps",
+      "id": "DevOps"
+    },
+    {
+      "name": "Анализ данных",
+      "id": "DataAnalysis"
+    },
+    {
+      "name": "Машинное обучение",
+      "id": "ML"
+    },
+    {
+      "name": "Системное администрирование",
+      "id": "SysAdmin"
+    }
+  ],
+  "companyDayCost": 20000,
+  "currentDate": "2025-12-01",
+  "holidays": [],
+  "workers": [
+    {
+      "id": "IvanPetrov",
+      "name": "Иван Петров",
+      "workTypeIds": ["DevCSharp", "DevJava", "QA"],
+      "productivity": 1.3
+    },
+    {
+      "id": "AnnaIvanova",
+      "name": "Анна Иванова",
+      "workTypeIds": ["DevPython", "QA", "DataAnalysis"],
+      "productivity": 1.5
+    },
+    {
+      "id": "SergeySidorov",
+      "name": "Сергей Сидоров",
+      "workTypeIds": ["DevJS", "UIDesign", "DevOps"],
+      "productivity": 1.2
+    },
+    {
+      "id": "ElenaKozlova",
+      "name": "Елена Козлова",
+      "workTypeIds": ["QA", "UIDesign", "SysAdmin"],
+      "productivity": 1.0
+    },
+    {
+      "id": "DmitryVolkov",
+      "name": "Дмитрий Волков",
+      "workTypeIds": ["DevPython", "DevJS", "ML"],
+      "productivity": 1.4
+    },
+    {
+      "id": "OlgaSmirnova",
+      "name": "Ольга Смирнова",
+      "workTypeIds": ["DataAnalysis", "ML", "DevPython"],
+      "productivity": 1.6
+    },
+    {
+      "id": "AlexeyFedorov",
+      "name": "Алексей Федоров",
+      "workTypeIds": ["DevOps", "SysAdmin", "DevJava"],
+      "productivity": 1.1
+    },
+    {
+      "id": "TatianaMorozova",
+      "name": "Татьяна Морозова",
+      "workTypeIds": ["UIDesign", "QA", "DevJS"],
+      "productivity": 1.3
+    },
+    {
+      "id": "PavelKuznetsov",
+      "name": "Павел Кузнецов",
+      "workTypeIds": ["DevCSharp", "DevOps", "SysAdmin"],
+      "productivity": 1.2
+    },
+    {
+      "id": "NataliaIvanova",
+      "name": "Наталья Иванова",
+      "workTypeIds": ["DataAnalysis", "ML", "DevPython"],
+      "productivity": 1.7
+    },
+    {
+      "id": "ViktorSokolov",
+      "name": "Виктор Соколов",
+      "workTypeIds": ["DevJava", "QA", "DevOps"],
+      "productivity": 1.0
+    },
+    {
+      "id": "MariaPopova",
+      "name": "Мария Попова",
+      "workTypeIds": ["UIDesign", "DevJS", "DataAnalysis"],
+      "productivity": 1.4
+    },
+    {
+      "id": "AndreyLebedev",
+      "name": "Андрей Лебедев",
+      "workTypeIds": ["DevCSharp", "DevPython", "ML"],
+      "productivity": 1.5
+    },
+    {
+      "id": "EkaterinaKozlova",
+      "name": "Екатерина Козлова",
+      "workTypeIds": ["QA", "SysAdmin", "DevOps"],
+      "productivity": 1.2
+    },
+    {
+      "id": "IgorNovikov",
+      "name": "Игорь Новиков",
+      "workTypeIds": ["DevJS", "UIDesign", "DataAnalysis"],
+      "productivity": 1.3
+    },
+    {
+      "id": "SvetlanaKuzmina",
+      "name": "Светлана Кузьмина",
+      "workTypeIds": ["DevPython", "ML", "QA"],
+      "productivity": 1.6
+    },
+    {
+      "id": "RomanBelyaev",
+      "name": "Роман Беляев",
+      "workTypeIds": ["DevJava", "DevOps", "SysAdmin"],
+      "productivity": 1.1
+    },
+    {
+      "id": "LarisaFomina",
+      "name": "Лариса Фомина",
+      "workTypeIds": ["UIDesign", "DevJS", "QA"],
+      "productivity": 1.4
+    },
+    {
+      "id": "VladimirEgorov",
+      "name": "Владимир Егоров",
+      "workTypeIds": ["DevCSharp", "DevPython", "ML"],
+      "productivity": 1.5
+    }
+  ]
+}

@@ -1,7 +1,7 @@
-from typing import List
 from models import TaskDetails
 
-def validate_task_worker_compatibility(task_details: TaskDetails, errors: List[str]):
+
+def validate_task_worker_compatibility(task_details: TaskDetails, errors: list):
     # Проверяем, есть ли тип работ задачи в списке типов работ работника
     if task_details.task.workTypeId not in task_details.worker.workTypeIds:
         # Формируем сообщение об ошибке
