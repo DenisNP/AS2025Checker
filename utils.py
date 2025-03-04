@@ -1,7 +1,37 @@
 import json
 from datetime import date, timedelta
 from pathlib import Path
-from typing import List, Any
+from typing import List, Any, Dict
+
+from models import Orders, WorkPlan, InputData, TaskDetails
+
+
+def aggregate_work_plan(orders: Orders, work_plan: WorkPlan, input_data: InputData) -> Dict[str, TaskDetails]:
+    # 1. Создаём словари для быстрого поиска
+    task_dict = {}
+    for order in orders.root:
+        for task in order.tasks:
+            task_dict[task.id] = (task, order)
+
+    worker_dict = {worker.id: worker for worker in input_data.workers}
+
+    # 2. Перебираем все назначенные задачи, извлекая по пути работников и заказы
+    result = {}
+    for assigned_task in work_plan.root:
+        if assigned_task.taskId in task_dict:
+            task, order = task_dict[assigned_task.taskId]
+            worker = worker_dict.get(assigned_task.workerId)
+            if worker:
+                result[assigned_task.taskId] = TaskDetails(
+                    assigned_task=assigned_task,
+                    task=task,
+                    order=order,
+                    worker=worker
+                )
+
+    print(f"Всего задач: {len(task_dict)}")
+    print(f"Задач в плане работ: {len(result)}")
+    return result
 
 
 def is_weekend(d: date) -> bool:
