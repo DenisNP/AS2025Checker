@@ -18,8 +18,8 @@ print(result)
 ```python
 class CheckResult(BaseModel):
     success: bool # пройдена ли в принципе проверка
-    total_earning: float # общий доход за вычетом штрафов и строимости работы фирмы
-    raw_earning: float # общий доход без учёта потерь
+    total_earning: float # общий доход за вычетом штрафов и строимости работы фирмы, то есть прибыль
+    raw_earning: float # общий доход без учёта потерь, то есть выручка
     total_penalty: float # общий штраф
     total_days: int # общее число календарных дней работы фирмы
     total_cost: float # общая стоимость работы фирмы за всё время
