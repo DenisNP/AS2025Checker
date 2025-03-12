@@ -35,7 +35,7 @@ def aggregate_work_plan(orders: Orders, work_plan: WorkPlan, input_data: InputDa
                 if assigned_task.end > max_date:
                     max_date = assigned_task.end
 
-    total_days = (max_date - min_date).days
+    total_days = (max_date - min_date).days + 1
 
     print(f"Всего задач: {len(task_dict)}")
     print(f"Задач в плане работ: {len(result)}")
