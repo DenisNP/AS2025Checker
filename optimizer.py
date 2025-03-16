@@ -1,6 +1,5 @@
 from datetime import date, timedelta
-from typing import List
-from models import Orders, InputData, WorkPlan, Order
+from models import Orders, InputData, WorkPlan
 from models.orders import Order, Task
 from models.work_plan import AssignedTask
 from utils import calculate_order_duration, is_weekend, calculate_task_end_date
@@ -8,7 +7,7 @@ from models.input_data import Worker
 
 def optimize(orders: Orders, input_data: InputData) -> WorkPlan:
     # сортируем заказы по убыванию прибыли на день
-    sorted_orders = sort_orders(orders, input_data)
+    sorted_orders = _sort_orders(orders, input_data)
 
     # создадим пустой план словарём для быстрого поиска
     work_plan_dict = {}
@@ -50,8 +49,13 @@ def optimize(orders: Orders, input_data: InputData) -> WorkPlan:
     return WorkPlan(list(work_plan_dict.values()))
 
 
-def sort_orders(orders: Orders, input_data: InputData) -> list[Order]:
-    return sorted(orders.root, key=lambda order: _order_score(order, input_data), reverse=True)
+def _sort_orders(orders: Orders, input_data: InputData) -> list[Order]:
+    # фильтруем заказы с положительной оценкой и сортируем по убыванию
+    return sorted(
+        [order for order in orders.root if _order_score(order, input_data) >= 0],
+        key=lambda order: _order_score(order, input_data),
+        reverse=True
+    )
 
 
 def _task_complexity(task: Task, input_data: InputData) -> float:
@@ -76,7 +80,10 @@ def _order_score(order: Order, input_data: InputData) -> float:
     # Учитываем оба фактора: доход за день и сложность выполнения
     # normalized_complexity близка к 1 для простых задач и к 0.1 для сложных
     duration = calculate_order_duration(order)
-    return (order.earning / duration) * normalized_complexity
+    earning_per_day = order.earning / duration
+    if earning_per_day <= input_data.companyDayCost:
+        return float('-inf')
+    return earning_per_day * normalized_complexity
 
 
 def _minimum_allowed_date_by_dependencies(task: Task, work_plan_dict: dict[str, AssignedTask], input_data: InputData) -> date | None:

@@ -41,7 +41,7 @@
       "id": "SysAdmin"
     }
   ],
-  "companyDayCost": 1000,
+  "companyDayCost": 50000,
   "currentDate": "2025-03-16",
   "holidays": [],
   "workers": [
@@ -50,6 +50,18 @@
       "name": "Иван Петров",
       "workTypeIds": ["DevCSharp", "DevJava", "QA"],
       "productivity": 1.3
+    },
+    {
+      "id": "Vasyan",
+      "name": "Васян",
+      "workTypeIds": ["DevCSharp"],
+      "productivity": 0.5
+    },
+    {
+      "id": "Kolyan",
+      "name": "Колян",
+      "workTypeIds": ["DevJava"],
+      "productivity": 0.75
     },
     {
       "id": "AnnaIvanova",
