@@ -17,3 +17,4 @@ class InputData(BaseModel):
     companyDayCost: float
     workers: List[Worker]
     holidays: List[date]
+    currentDate: date

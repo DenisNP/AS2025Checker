@@ -22,12 +22,12 @@ class CheckResult(BaseModel):
         e = "\n\t\t ".join(self.errors)
         return (
             f"  Проверка пройдена: {self.success}\n"
-            f"  Общая прибыль: {self.total_earning}\n"
-            f"  Общая выручка: {self.raw_earning}\n"
-            f"  Общий штраф: {self.total_penalty}\n"
-            f"  Общие расходы: {self.total_cost}\n"
-            f"  Дней работы фирмы: {self.total_days}\n"
-            f"  Заказов завершено: {self.orders_completed}\n"
+            f"  Общая прибыль: {'{:,}'.format(self.total_earning).replace(',', ' ')}\n"
+            f"  Общая выручка: {'{:,}'.format(self.raw_earning).replace(',', ' ')}\n" 
+            f"  Общий штраф: {'{:,}'.format(self.total_penalty).replace(',', ' ')}\n"
+            f"  Общие расходы: {'{:,}'.format(self.total_cost).replace(',', ' ')}\n"
+            f"  Дней работы фирмы: {'{:,}'.format(self.total_days).replace(',', ' ')}\n"
+            f"  Заказов завершено: {'{:,}'.format(self.orders_completed).replace(',', ' ')}\n"
             f"  Предупреждения:\n\t\t {w}\n"
             f"  Ошибки:\n\t\t {e}\n"
         )
