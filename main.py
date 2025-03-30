@@ -96,4 +96,33 @@ def change_deadline(orders: Orders, add_days: int) -> Orders:
     return Orders(root=new_orders)
 
 def calculate_variant(orders: Orders, input_data: InputData) -> float:
-    pass;
+    # Создаем план работ для текущего варианта
+    work_plan = optimize(orders, input_data)
+    # Проверяем план и получаем результат
+    result = check(orders, work_plan, input_data)
+    return result.total_earning
+
+def create_variants(orders: Orders, input_data: InputData) -> dict:
+    # Создаем матрицу результатов
+    matrix = {}
+    
+    # Перебираем количество сотрудников от 5 до 15
+    for workers_count in range(5, 16):
+        # Модифицируем input_data для текущего количества сотрудников
+        modified_input = change_workers(input_data, workers_count)
+        
+        # Создаем строку матрицы для текущего количества работников
+        matrix[workers_count] = {}
+        
+        # Перебираем сдвиг дедлайна от 0 до 150 дней с шагом 15
+        for deadline_shift in range(0, 151, 15):
+            # Модифицируем заказы для текущего сдвига дедлайна
+            modified_orders = change_deadline(orders, deadline_shift)
+            
+            # Рассчитываем результат для текущего варианта
+            result = calculate_variant(modified_orders, modified_input)
+            
+            # Сохраняем результат в матрицу
+            matrix[workers_count][deadline_shift] = result
+    
+    return matrix
