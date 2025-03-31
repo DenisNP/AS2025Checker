@@ -52,7 +52,7 @@ def optimize(orders: Orders, input_data: InputData) -> WorkPlan:
 def _sort_orders(orders: Orders, input_data: InputData) -> list[Order]:
     # фильтруем заказы с положительной оценкой и сортируем по убыванию
     return sorted(
-        [order for order in orders.root if _order_score(order, input_data) >= 0],
+        [order for order in orders.root ], # if _order_score(order, input_data) >= 0
         key=lambda order: _order_score(order, input_data),
         reverse=True
     )

@@ -1,3 +1,4 @@
+from datetime import date
 from typing import List
 from pydantic import BaseModel
 from models import WorkPlan, Orders, InputData
@@ -74,3 +75,37 @@ def check(orders: Orders, work_plan: WorkPlan, input_data: InputData) -> CheckRe
     # проверка успешна, если нет критических ошибок
     result.success = len(result.errors) == 0
     return result
+
+
+def only_calculate_earning(orders: Orders, work_plan: WorkPlan, input_data: InputData) -> float:
+    result = CheckResult(
+        success=False,
+        total_earning=0,
+        raw_earning=0,
+        total_penalty=0,
+        total_days=0,
+        total_cost=0,
+        orders_completed=0,
+        errors=[],
+        warnings=[]
+    )
+
+    assigned_tasks = {task.taskId: task for task in work_plan.root}
+
+    # считаем доход
+    min_date = input_data.currentDate
+    max_date = max(t.end for t in assigned_tasks.values())
+
+    for order in orders.root:
+        earning, penalty, delay_days, is_completed = calculate_order_cost(order, assigned_tasks)
+        if is_completed:
+            result.orders_completed += 1
+            result.total_penalty += penalty
+            result.raw_earning += earning
+
+    # общие показатели
+    result.total_days = (max_date - min_date).days + 1
+    result.total_cost = result.total_days * input_data.companyDayCost
+    result.total_earning = result.raw_earning - result.total_penalty - result.total_cost
+
+    return result.total_earning
