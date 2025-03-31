@@ -1,30 +1,8 @@
 from typing import Dict, Optional
 from models import Order, TaskDetails
+from models.work_plan import AssignedTask
 
 
-def calculate_order_delay(order: Order, all_task_details: Dict[str, TaskDetails]) -> Optional[int]:
-    """
-    Вычисляет количество дней просрочки заказа.
-    Возвращает:
-    - Количество дней просрочки (0, если заказ не просрочен).
-    - None, если заказ не завершён (отсутствуют задачи в плане работ).
-    """
-    # Проверяем, что все задачи заказа присутствуют в плане работ
-    for task in order.tasks:
-        if task.id not in all_task_details:
-            return None  # Заказ не завершён, так как не все задачи присутствуют в плане
-
-    # Находим максимальную дату окончания среди всех задач заказа
-    completion_date = max(
-        all_task_details[task.id].assigned_task.end
-        for task in order.tasks
-    )
-
-    # Сравниваем дату завершения с deadline
-    delay_days = (completion_date - order.deadline).days
-
-    # Возвращаем количество дней просрочки (но не меньше 0)
-    return max(delay_days, 0)
 
 
 def validate_dependencies(current_task: TaskDetails, all_task_details: Dict[str, TaskDetails], errors: list):

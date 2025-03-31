@@ -1,9 +1,9 @@
 from typing import List
 from pydantic import BaseModel
 from models import WorkPlan, Orders, InputData
-from utils import aggregate_work_plan
+from utils import aggregate_work_plan, calculate_order_cost
 from validators import validate_task_duration, validate_task_worker_compatibility, validate_task_overlap, \
-    validate_dependencies, calculate_order_delay
+    validate_dependencies
 
 
 class CheckResult(BaseModel):
@@ -58,15 +58,13 @@ def check(orders: Orders, work_plan: WorkPlan, input_data: InputData) -> CheckRe
 
     # считаем доход
     for order in orders.root:
-        delay_days = calculate_order_delay(order, plan)
-        if not delay_days is None:
-            # штраф за просрочку (может быть ноль)
-            penalty = order.penaltyByDay * delay_days
-            if penalty < order.earning:
-                # заказ считаем выполненным, если штраф меньше чем доход
-                result.orders_completed += 1
-                result.total_penalty += penalty
-                result.raw_earning += order.earning
+        # Преобразуем словарь TaskDetails в словарь AssignedTask
+        assigned_tasks = {task_id: task.assigned_task for task_id, task in plan.items()}
+        earning, penalty, delay_days, is_completed = calculate_order_cost(order, assigned_tasks)
+        if is_completed:
+            result.orders_completed += 1
+            result.total_penalty += penalty
+            result.raw_earning += earning
 
     # общие показатели
     result.total_days = total_days

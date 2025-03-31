@@ -125,4 +125,4 @@ def create_gantt_chart(orders: Orders, work_plan: WorkPlan, input_data: InputDat
         # Запускаем сервер
         print(f"\nЗапускаем сервер на http://localhost:{port}")
         print("Для завершения работы нажмите Ctrl+C")
-        app.run_server(debug=False, port=port) 
+        app.run(debug=False, port=port) 

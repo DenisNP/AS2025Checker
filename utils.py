@@ -1,11 +1,12 @@
 import json
 from datetime import date, timedelta
 from pathlib import Path
-from typing import List, Any, Dict
+from typing import List, Any, Dict, Optional
 from math import ceil
 
 from models import Orders, WorkPlan, InputData, TaskDetails
 from models.orders import Order
+from models.work_plan import AssignedTask
 
 
 def aggregate_work_plan(orders: Orders, work_plan: WorkPlan, input_data: InputData) -> (Dict[str, TaskDetails], int):
@@ -39,8 +40,6 @@ def aggregate_work_plan(orders: Orders, work_plan: WorkPlan, input_data: InputDa
 
     total_days = (max_date - min_date).days + 1
 
-    print(f"Всего задач: {len(task_dict)}")
-    print(f"Задач в плане работ: {len(result)}")
     return result, total_days
 
 
@@ -127,3 +126,49 @@ def load_json(file_name: str) -> Any:
     if data_path.exists():
         with open(data_path, "r", encoding="utf-8") as file:
             return json.load(file)
+
+
+def calculate_order_delay(order: Order, work_plan_dict: Dict[str, AssignedTask]) -> Optional[int]:
+    """
+    Вычисляет количество дней просрочки заказа.
+    Возвращает:
+    - Количество дней просрочки (0, если заказ не просрочен).
+    - None, если заказ не завершён (отсутствуют задачи в плане работ).
+    """
+    # Проверяем, что все задачи заказа присутствуют в плане работ
+    for task in order.tasks:
+        if task.id not in work_plan_dict:
+            return None  # Заказ не завершён, так как не все задачи присутствуют в плане
+
+    # Находим максимальную дату окончания среди всех задач заказа
+    completion_date = max(
+        work_plan_dict[task.id].end
+        for task in order.tasks
+    )
+
+    # Сравниваем дату завершения с deadline
+    delay_days = (completion_date - order.deadline).days
+
+    # Возвращаем количество дней просрочки (но не меньше 0)
+    return max(delay_days, 0)
+
+def calculate_order_cost(order: Order, plan: Dict[str, AssignedTask]) -> tuple[float, float, int, bool]:
+    """
+    Вычисляет стоимость заказа, включая доход, штрафы и задержки.
+    
+    Args:
+        order: заказ для расчета
+        plan: план работ
+    
+    Returns:
+        tuple[float, float, int, bool]: (доход, штраф, задержка в днях, статус выполнения)
+    """
+    delay_days = calculate_order_delay(order, plan)
+    if delay_days is None:
+        return 0, 0, 0, False
+        
+    # штраф за просрочку (может быть ноль)
+    penalty = order.penaltyByDay * delay_days
+    is_completed = penalty < order.earning
+    
+    return order.earning, penalty, delay_days, is_completed
