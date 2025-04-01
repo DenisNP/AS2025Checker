@@ -5,7 +5,7 @@ from typing import List, Any, Dict, Optional
 from math import ceil
 
 from models import Orders, WorkPlan, InputData, TaskDetails
-from models.orders import Order
+from models.orders import Order, Task
 from models.work_plan import AssignedTask
 
 
@@ -48,7 +48,7 @@ def is_weekend(d: date) -> bool:
     return d.weekday() >= 5  # 5 = суббота, 6 = воскресенье
 
 
-def calculate_order_duration(order: Order) -> int:
+def calculate_order_duration(order: Order, input_data: InputData | None = None) -> int:
     """
     Вычисляет длительность заказа с учетом зависимостей между задачами.
     """
@@ -62,21 +62,31 @@ def calculate_order_duration(order: Order) -> int:
             
         # Находим задачу по id
         task = next(t for t in order.tasks if t.id == task_id)
+        task_duration = task.baseDuration
+        if input_data is not None:
+            task_duration = ceil(task.baseDuration / top_productivity_by_work_type(task, input_data))
         
         # Если нет зависимостей, возвращаем базовую длительность
         if not task.dependsOn:
-            max_durations[task_id] = task.baseDuration
-            return task.baseDuration
+            max_durations[task_id] = task_duration
+            return task_duration
             
         # Иначе находим максимальный путь через зависимости
         max_dep_duration = max(get_max_path_duration(dep_id) for dep_id in task.dependsOn)
-        total_duration = max_dep_duration + task.baseDuration
+        total_duration = max_dep_duration + task_duration
         
         max_durations[task_id] = total_duration
         return total_duration
     
     # Находим максимальную длительность для всех конечных задач
     return max(get_max_path_duration(task.id) for task in order.tasks)
+
+
+def top_productivity_by_work_type(task: Task, input_data: InputData) -> float:
+    """
+    Возвращает максимальную продуктивность для заданного типа работы.
+    """
+    return max(worker.productivity for worker in input_data.workers if task.workTypeId in worker.workTypeIds)
 
 
 def calculate_working_days(start: date, end: date, holidays: List[date]) -> int:
@@ -151,6 +161,14 @@ def calculate_order_delay(order: Order, work_plan_dict: Dict[str, AssignedTask])
 
     # Возвращаем количество дней просрочки (но не меньше 0)
     return max(delay_days, 0)
+
+def calculate_placed_order_duration(order: Order, plan: Dict[str, AssignedTask]) -> int:
+    """
+    Вычисляет длительность заказа как разницу между датой завершения и датой начала
+    """
+    start_date = min(plan[task.id].start for task in order.tasks if task.id in plan)
+    end_date = max(plan[task.id].end for task in order.tasks if task.id in plan)
+    return (end_date - start_date).days
 
 def calculate_order_cost(order: Order, plan: Dict[str, AssignedTask]) -> tuple[float, float, int, bool]:
     """
