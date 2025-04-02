@@ -19,8 +19,8 @@ class CheckResult(BaseModel):
     warnings: List[str]
 
     def __str__(self):
-        w = "\n\t\t ".join(self.warnings)
-        e = "\n\t\t ".join(self.errors)
+        w = "нет" if len(self.warnings) == 0 else "\n\t\t ".join(self.warnings)
+        e = "нет" if len(self.errors) == 0 else "\n\t\t ".join(self.errors)
         return (
             f"  Проверка пройдена: {self.success}\n"
             f"  Общая прибыль: {'{:,}'.format(self.total_earning).replace(',', ' ')}\n"
@@ -28,7 +28,7 @@ class CheckResult(BaseModel):
             f"  Общий штраф: {'{:,}'.format(self.total_penalty).replace(',', ' ')}\n"
             f"  Общие расходы: {'{:,}'.format(self.total_cost).replace(',', ' ')}\n"
             f"  Дней работы фирмы: {'{:,}'.format(self.total_days).replace(',', ' ')}\n"
-            f"  Заказов завершено: {'{:,}'.format(self.orders_completed).replace(',', ' ')}\n"
+            f"  Заказов завершено в плюс: {'{:,}'.format(self.orders_completed).replace(',', ' ')}\n"
             f"  Предупреждения:\n\t\t {w}\n"
             f"  Ошибки:\n\t\t {e}\n"
         )

@@ -1,4 +1,6 @@
 from datetime import date, timedelta
+import math
+import random
 from typing import List
 import time
 from models import Orders, InputData, WorkPlan
@@ -9,6 +11,8 @@ from utils import calculate_order_cost, calculate_order_duration, calculate_work
 from models.input_data import Worker
 import pygad
 from checker import only_calculate_earning
+import multiprocessing as mp
+from functools import partial
 
 class GaOptimizer:
     def __init__(self, input_data: InputData, orders: Orders):
@@ -35,7 +39,7 @@ class GaOptimizer:
             num_generations=15,
             num_parents_mating=6,
             fitness_func=self._fitness_function,
-            sol_per_pop=30,
+            sol_per_pop=20,
             num_genes=len(self.orders.root),
             crossover_type="scattered",
             init_range_low=1,
@@ -134,6 +138,162 @@ class GaOptimizer:
         # сортируем задачи по дате начала
         sorted_tasks = sorted(work_plan_dict.values(), key=lambda x: x.start)
         return WorkPlan(sorted_tasks)
+    
+    def _run_simulated_annealing(self, initial_temperature: float, cooling_rate: float) -> tuple[WorkPlan, float]:
+        priorities = [round(self._estimated_total_order_earning(o)) for o in self.orders.root]
+        plan = self._create_plan(priorities)
+        final_plan = self._fine_tune_simulated_annealing(plan, priorities, initial_temperature, cooling_rate)
+        final_earning = only_calculate_earning(self.orders, final_plan, self.input_data)
+        return final_plan, final_earning
+
+    def _try_swap_orders(self, order1_idx: int, order2_idx: int, priorities: List[int], plan: WorkPlan) -> tuple[bool, WorkPlan, float]:
+        # сохраняем текущие приоритеты
+        old_priority1 = priorities[order1_idx]
+        old_priority2 = priorities[order2_idx]
+
+        # меняем приоритеты местами
+        priorities[order1_idx] = old_priority2
+        priorities[order2_idx] = old_priority1
+
+        # создаём новый план с обновленными приоритетами
+        new_plan = self._create_plan(priorities)
+
+        # вычисляем разницу в прибыли
+        current_earning = only_calculate_earning(self.orders, plan, self.input_data)
+        new_earning = only_calculate_earning(self.orders, new_plan, self.input_data)
+
+        # вычисляем относительную разницу в прибыли и масштабируем её
+        if current_earning != 0:
+            relative_diff = (new_earning - current_earning) / current_earning
+            scaled_diff = relative_diff * 1000
+        else:
+            scaled_diff = 1000 if new_earning > 0 else 0
+
+        # если не приняли новый план, возвращаем старые приоритеты
+        if scaled_diff <= 0:
+            priorities[order1_idx] = old_priority1
+            priorities[order2_idx] = old_priority2
+            return False, plan, current_earning
+
+        return True, new_plan, new_earning
+
+    def _parallel_iteration(self, temperature: float, priorities: List[int], plan: WorkPlan) -> tuple[WorkPlan, float]:
+        num_processes = 10
+        pool = mp.Pool(processes=num_processes)
+
+        # Генерируем пары заказов для каждого процесса
+        order_pairs = []
+        for _ in range(num_processes):
+            order1_idx = random.randint(0, len(self.orders.root) - 1)
+            order2_idx = random.randint(0, len(self.orders.root) - 1)
+            while order2_idx == order1_idx:
+                order2_idx = random.randint(0, len(self.orders.root) - 1)
+            order_pairs.append((order1_idx, order2_idx))
+
+        # Запускаем параллельные процессы
+        results = pool.starmap(self._try_swap_orders, 
+                             [(order1_idx, order2_idx, priorities, plan) 
+                              for order1_idx, order2_idx in order_pairs])
+        
+        # Закрываем пул
+        pool.close()
+        pool.join()
+
+        # Выбираем лучший результат
+        best_result = max(results, key=lambda x: x[2])
+        return best_result[1], best_result[2]
+
+    def optimize_with_simulated_annealing(self) -> WorkPlan:
+        priorities = [round(self._estimated_total_order_earning(o)) for o in self.orders.root]
+        plan = self._create_plan(priorities)
+        
+        # задаём начальные параметры для имитации отжига
+        temperature = 1000
+        cooling_rate = 0.9
+        max_iterations = 1000
+
+        # выполняем имитацию отжига
+        for iteration in range(max_iterations):
+            # параллельно проверяем несколько пар заказов
+            new_plan, new_earning = self._parallel_iteration(temperature, priorities, plan)
+            
+            # вычисляем вероятность перехода к новому плану
+            current_earning = only_calculate_earning(self.orders, plan, self.input_data)
+            if current_earning != 0:
+                relative_diff = (new_earning - current_earning) / current_earning
+                scaled_diff = relative_diff * 1000
+            else:
+                scaled_diff = 1000 if new_earning > 0 else 0
+
+            probability = math.exp(-abs(scaled_diff) / (temperature * 0.1))
+            print(f"Итерация {iteration}, температура: {temperature:.2f}, вероятность: {probability:.2f}, разница: {scaled_diff:.2f}")
+
+            # переходим к новому плану, если он лучше
+            if scaled_diff > 0 or random.random() < probability:
+                plan = new_plan
+                print(f"    Приняли изменение. Новая прибыль: {new_earning:.2f}")
+            else:
+                print(f"    Отклонили изменение")
+
+            # охлаждаем температуру
+            temperature *= cooling_rate
+
+        return plan
+
+    def _fine_tune_simulated_annealing(self, plan: WorkPlan, priorities: List[int], 
+                                     initial_temperature: float, cooling_rate: float) -> WorkPlan:
+        # задаём начальные параметры для имитации отжига
+        temperature = initial_temperature
+        max_iterations = 1000
+
+        # выполняем имитацию отжига
+        for _ in range(max_iterations):
+            # выбираем два случайных заказа для обмена приоритетами
+            order1_idx = random.randint(0, len(self.orders.root) - 1)
+            order2_idx = random.randint(0, len(self.orders.root) - 1)
+            while order2_idx == order1_idx:
+                order2_idx = random.randint(0, len(self.orders.root) - 1)
+
+            # сохраняем текущие приоритеты
+            old_priority1 = priorities[order1_idx]
+            old_priority2 = priorities[order2_idx]
+
+            # меняем приоритеты местами
+            priorities[order1_idx] = old_priority2
+            priorities[order2_idx] = old_priority1
+
+            # создаём новый план с обновленными приоритетами
+            new_plan = self._create_plan(priorities)
+
+            # вычисляем разницу в прибыли
+            current_earning = only_calculate_earning(self.orders, plan, self.input_data)
+            new_earning = only_calculate_earning(self.orders, new_plan, self.input_data)
+
+            # вычисляем относительную разницу в прибыли и масштабируем её
+            if current_earning != 0:
+                relative_diff = (new_earning - current_earning) / current_earning
+                scaled_diff = relative_diff * 1000
+            else:
+                scaled_diff = 1000 if new_earning > 0 else 0
+
+            # вычисляем вероятность перехода к новому плану
+            probability = math.exp(-abs(scaled_diff) / (temperature * 0.1))
+            print(f"Температура: {temperature:.2f}, вероятность: {probability:.2f}, разница: {scaled_diff:.2f}")
+
+            # переходим к новому плану, если он лучше
+            if scaled_diff > 0 or random.random() < probability:
+                plan = new_plan
+                print(f"    Приняли изменение. Новая прибыль: {new_earning:.2f}")
+            else:
+                # если не приняли новый план, возвращаем старые приоритеты
+                priorities[order1_idx] = old_priority1
+                priorities[order2_idx] = old_priority2
+                print(f"    Отклонили изменение")
+
+            # охлаждаем температуру
+            temperature *= cooling_rate
+
+        return plan
     
     def _try_move_task_left(self, task: Task, work_plan_dict: dict[str, AssignedTask]) -> bool:
         assigned_task = work_plan_dict[task.id]
