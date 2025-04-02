@@ -5,7 +5,7 @@ from .orders import Task, Order
 from .input_data import Worker
 
 class AssignedTask(BaseModel):
-    taskId: str
+    taskId: str | None
     workerId: str
     start: date
     end: date

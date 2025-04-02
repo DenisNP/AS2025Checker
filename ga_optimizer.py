@@ -17,6 +17,7 @@ from functools import partial
 class GaOptimizer:
     def __init__(self, input_data: InputData, orders: Orders):
         self.input_data = input_data
+        self.additional_orders: List[Order] = []
         # создаём копию списка заказов и фильтруем её
         self.orders = Orders([o for o in orders.root if self._estimated_total_order_earning(o) > 0])
         print(f"Оставлено заказов: {len(self.orders.root)}")
@@ -30,16 +31,40 @@ class GaOptimizer:
 
     def alt_optimize(self) -> WorkPlan:
         priorities = [round(self._estimated_total_order_earning(o)) for o in self.orders.root]
-        return self._create_plan(priorities)
+        plan = self._create_plan(priorities)
+
+        # удалим из orders заказы, которые не входят в план
+        order_ids_by_task_id = {}
+        for order in self.orders.root:      
+            for task in order.tasks:
+                order_ids_by_task_id[task.id] = order.id
+
+        # удалим из orders заказы, которые не входят в план
+        orders_to_keep: List[str] = []
+        for task in plan.root:
+            order_id = order_ids_by_task_id[task.taskId]
+            orders_to_keep.append(order_id)
+
+        self.additional_orders = sorted([o for o in self.orders.root if o.id not in orders_to_keep], key=lambda x: self._estimated_total_order_earning(x), reverse=True)
+        self.orders = Orders([o for o in self.orders.root if o.id in orders_to_keep])
+
+        # выведем доход каждого дополнительного заказа
+        #for order in self.additional_orders:
+            #print(f"Доход дополнительного заказа {order.id}: {self._estimated_total_order_earning(order)}")
+
+        # и запустим оптимизацию ГА
+        print(f"Оставлено после первого шага: {len(self.orders.root)}")
+        plan = self.optimize()
+        return plan
 
     def optimize(self) -> WorkPlan:
         start_time = time.time()
         
         ga_instance = pygad.GA(
-            num_generations=15,
+            num_generations=5,
             num_parents_mating=6,
             fitness_func=self._fitness_function,
-            sol_per_pop=20,
+            sol_per_pop=500,
             num_genes=len(self.orders.root),
             crossover_type="scattered",
             init_range_low=1,
@@ -204,6 +229,8 @@ class GaOptimizer:
         return best_result[1], best_result[2]
 
     def optimize_with_simulated_annealing(self) -> WorkPlan:
+        start_time = time.time()
+        
         priorities = [round(self._estimated_total_order_earning(o)) for o in self.orders.root]
         plan = self._create_plan(priorities)
         
@@ -211,6 +238,10 @@ class GaOptimizer:
         temperature = 1000
         cooling_rate = 0.9
         max_iterations = 1000
+
+        # список для хранения последних результатов
+        last_results = []
+        last_results_size = 10
 
         # выполняем имитацию отжига
         for iteration in range(max_iterations):
@@ -235,9 +266,23 @@ class GaOptimizer:
             else:
                 print(f"    Отклонили изменение")
 
+            # добавляем текущий результат в список последних результатов
+            last_results.append(new_earning)
+            if len(last_results) > last_results_size:
+                last_results.pop(0)
+
+            # проверяем, все ли последние результаты одинаковые
+            if len(last_results) == last_results_size and all(x == last_results[0] for x in last_results):
+                print(f"Прерываем оптимизацию: {last_results_size} последних результатов одинаковые ({last_results[0]:.2f})")
+                break
+
             # охлаждаем температуру
             temperature *= cooling_rate
 
+        end_time = time.time()
+        execution_time = end_time - start_time
+        print(f"\nВремя выполнения: {execution_time:.2f} секунд")
+        
         return plan
 
     def _fine_tune_simulated_annealing(self, plan: WorkPlan, priorities: List[int], 
