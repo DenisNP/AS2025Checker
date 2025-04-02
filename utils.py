@@ -3,7 +3,6 @@ from datetime import date, timedelta
 from pathlib import Path
 from typing import List, Any, Dict, Optional
 from math import ceil
-
 from models import Orders, WorkPlan, InputData, TaskDetails
 from models.orders import Order, Task
 from models.work_plan import AssignedTask
@@ -41,11 +40,6 @@ def aggregate_work_plan(orders: Orders, work_plan: WorkPlan, input_data: InputDa
     total_days = (max_date - min_date).days + 1
 
     return result, total_days
-
-
-def is_weekend(d: date) -> bool:
-    """Проверяет, является ли дата выходным (суббота или воскресенье)."""
-    return d.weekday() >= 5  # 5 = суббота, 6 = воскресенье
 
 
 def calculate_order_duration(order: Order, input_data: InputData | None = None) -> int:
@@ -87,45 +81,6 @@ def top_productivity_by_work_type(task: Task, input_data: InputData) -> float:
     Возвращает максимальную продуктивность для заданного типа работы.
     """
     return max(worker.productivity for worker in input_data.workers if task.workTypeId in worker.workTypeIds)
-
-
-def calculate_working_days(start: date, end: date, holidays: List[date]) -> int:
-    """Вычисляет количество рабочих дней между двумя датами (включительно)."""
-    delta = end - start
-    working_days = 0
-    for i in range(delta.days + 1):
-        current_date = start + timedelta(days=i)
-        if not is_weekend(current_date) and current_date not in holidays:
-            working_days += 1
-    return working_days
-
-
-def calculate_task_end_date(start_date: date, base_duration: int, worker_productivity: float, holidays: List[date]) -> date:
-    """
-    Вычисляет дату окончания задачи с учетом:
-    - базовой длительности задачи
-    - продуктивности работника
-    - выходных и праздничных дней
-    
-    Args:
-        start_date: дата начала задачи
-        base_duration: базовая длительность задачи в рабочих днях
-        worker_productivity: продуктивность работника (>0)
-        holidays: список праздничных дней
-    
-    Returns:
-        date: дата окончания задачи
-    """
-    actual_duration = ceil(base_duration / worker_productivity)
-
-    end_date = start_date
-    working_days_count = 1 # начинаем с единицы, потому что дата начала уже учтена
-    while working_days_count < actual_duration:
-        end_date += timedelta(days=1)
-        if not is_weekend(end_date) and end_date not in holidays:
-            working_days_count += 1
-            
-    return end_date
 
 
 def load_json(file_name: str) -> Any:

@@ -6,8 +6,8 @@ import time
 from models import Orders, InputData, WorkPlan
 from models.orders import Order, Task
 from models.work_plan import AssignedTask
-from utils import calculate_order_cost, calculate_order_duration, calculate_working_days, is_weekend, \
-    calculate_task_end_date, calculate_placed_order_duration
+from date_utils import calculate_working_days, is_weekend, calculate_task_end_date
+from utils import calculate_order_cost, calculate_order_duration, calculate_placed_order_duration
 from models.input_data import Worker
 import pygad
 from checker import only_calculate_earning

@@ -1,7 +1,7 @@
 from typing import Dict
 from models import TaskDetails, InputData
 from math import ceil
-from utils import calculate_working_days
+from date_utils import calculate_working_days
 
 def validate_task_overlap(task_details: TaskDetails, all_task_details: Dict[str, TaskDetails], errors: list):
     # Получаем данные текущей задачи

@@ -1,1 +1,1028 @@
-[{"taskId":"TASK_ID_799_WWEZ","workerId":"IvanPetrov","start":"2025-04-04","end":"2025-04-10"},{"taskId":"TASK_ID_890_DDJ8","workerId":"IvanPetrov","start":"2025-06-04","end":"2025-06-13"},{"taskId":"TASK_ID_77_W0FM","workerId":"IvanPetrov","start":"2025-07-01","end":"2025-07-09"},{"taskId":"TASK_ID_888_1QOO","workerId":"IvanPetrov","start":"2025-05-30","end":"2025-06-03"},{"taskId":"TASK_ID_482_6V5N","workerId":"IvanPetrov","start":"2025-05-27","end":"2025-05-29"},{"taskId":"TASK_ID_559_1X5F","workerId":"IvanPetrov","start":"2025-04-11","end":"2025-04-22"},{"taskId":"TASK_ID_788_L8AQ","workerId":"IvanPetrov","start":"2025-07-25","end":"2025-08-04"},{"taskId":"TASK_ID_1142_C9ZS","workerId":"IvanPetrov","start":"2025-10-06","end":"2025-10-13"},{"taskId":"TASK_ID_754_8X36","workerId":"IvanPetrov","start":"2025-05-20","end":"2025-05-26"},{"taskId":"TASK_ID_1071_ZXVJ","workerId":"IvanPetrov","start":"2025-08-12","end":"2025-08-12"},{"taskId":"TASK_ID_520_V4ZG","workerId":"IvanPetrov","start":"2025-08-13","end":"2025-08-22"},{"taskId":"TASK_ID_277_QORD","workerId":"IvanPetrov","start":"2025-04-30","end":"2025-05-05"},{"taskId":"TASK_ID_172_LPMZ","workerId":"IvanPetrov","start":"2025-11-14","end":"2025-11-18"},{"taskId":"TASK_ID_575_K7NK","workerId":"IvanPetrov","start":"2025-07-15","end":"2025-07-16"},{"taskId":"TASK_ID_728_62KV","workerId":"IvanPetrov","start":"2025-11-07","end":"2025-11-13"},{"taskId":"TASK_ID_1068_SKPB","workerId":"IvanPetrov","start":"2025-08-05","end":"2025-08-11"},{"taskId":"TASK_ID_388_545X","workerId":"IvanPetrov","start":"2025-08-25","end":"2025-08-29"},{"taskId":"TASK_ID_1140_LDHE","workerId":"IvanPetrov","start":"2025-09-30","end":"2025-10-03"},{"taskId":"TASK_ID_182_ZGRF","workerId":"IvanPetrov","start":"2025-12-01","end":"2025-12-03"},{"taskId":"TASK_ID_1087_WJA7","workerId":"IvanPetrov","start":"2025-09-24","end":"2025-09-29"},{"taskId":"TASK_ID_573_QCAY","workerId":"IvanPetrov","start":"2025-07-10","end":"2025-07-14"},{"taskId":"TASK_ID_1060_X1AN","workerId":"IvanPetrov","start":"2025-07-17","end":"2025-07-24"},{"taskId":"TASK_ID_458_J0BA","workerId":"IvanPetrov","start":"2025-05-06","end":"2025-05-06"},{"taskId":"TASK_ID_390_0EDD","workerId":"IvanPetrov","start":"2025-09-01","end":"2025-09-10"},{"taskId":"TASK_ID_1090_SB13","workerId":"IvanPetrov","start":"2025-09-17","end":"2025-09-23"},{"taskId":"TASK_ID_1089_IAT6","workerId":"IvanPetrov","start":"2025-09-11","end":"2025-09-16"},{"taskId":"TASK_ID_1145_P56W","workerId":"IvanPetrov","start":"2025-05-07","end":"2025-05-16"},{"taskId":"TASK_ID_745_BKT4","workerId":"IvanPetrov","start":"2025-06-20","end":"2025-06-30"},{"taskId":"TASK_ID_175_0XF8","workerId":"IvanPetrov","start":"2025-11-19","end":"2025-11-28"},{"taskId":"TASK_ID_391_5135","workerId":"AnnaIvanova","start":"2025-08-12","end":"2025-08-14"},{"taskId":"TASK_ID_558_LES1","workerId":"AnnaIvanova","start":"2025-04-04","end":"2025-04-17"},{"taskId":"TASK_ID_173_K0UC","workerId":"AlexeyFedorov","start":"2025-09-04","end":"2025-09-08"},{"taskId":"TASK_ID_164_BUT1","workerId":"ViktorSokolov","start":"2025-10-08","end":"2025-10-16"},{"taskId":"TASK_ID_1084_XGA2","workerId":"SergeySidorov","start":"2025-08-07","end":"2025-08-18"},{"taskId":"TASK_ID_329_W34J","workerId":"ViktorSokolov","start":"2026-02-06","end":"2026-02-19"},{"taskId":"TASK_ID_1029_GBYX","workerId":"OlgaSmirnova","start":"2025-10-24","end":"2025-11-13"},{"taskId":"TASK_ID_1033_J30V","workerId":"ViktorSokolov","start":"2025-12-08","end":"2025-12-10"},{"taskId":"TASK_ID_821_95LK","workerId":"AlexeyFedorov","start":"2025-07-02","end":"2025-07-10"},{"taskId":"TASK_ID_421_LLK1","workerId":"DmitryVolkov","start":"2025-07-30","end":"2025-07-30"},{"taskId":"TASK_ID_585_PV38","workerId":"DmitryVolkov","start":"2025-09-16","end":"2025-09-22"},{"taskId":"TASK_ID_840_2MS6","workerId":"ViktorSokolov","start":"2025-10-28","end":"2025-11-03"},{"taskId":"TASK_ID_1072_89NM","workerId":"AlexeyFedorov","start":"2025-07-25","end":"2025-07-30"},{"taskId":"TASK_ID_1016_YR8X","workerId":"AnnaIvanova","start":"2026-01-09","end":"2026-01-27"},{"taskId":"TASK_ID_552_BDS1","workerId":"AlexeyFedorov","start":"2025-06-05","end":"2025-06-10"},{"taskId":"TASK_ID_1038_1QH5","workerId":"AlexeyFedorov","start":"2026-01-21","end":"2026-01-22"},{"taskId":"TASK_ID_252_Q58F","workerId":"AlexeyFedorov","start":"2025-04-17","end":"2025-04-17"},{"taskId":"TASK_ID_178_8ODG","workerId":"SergeySidorov","start":"2025-12-01","end":"2025-12-09"},{"taskId":"TASK_ID_553_DCCE","workerId":"ViktorSokolov","start":"2025-06-05","end":"2025-06-13"},{"taskId":"TASK_ID_725_2E7G","workerId":"AnnaIvanova","start":"2025-12-11","end":"2025-12-23"},{"taskId":"TASK_ID_457_I4RD","workerId":"AlexeyFedorov","start":"2025-04-18","end":"2025-04-24"},{"taskId":"TASK_ID_74_U5NM","workerId":"AnnaIvanova","start":"2025-06-11","end":"2025-06-30"},{"taskId":"TASK_ID_1059_AWSP","workerId":"AnnaIvanova","start":"2025-07-15","end":"2025-07-16"},{"taskId":"TASK_ID_598_DGL4","workerId":"OlgaSmirnova","start":"2025-12-10","end":"2025-12-15"},{"taskId":"TASK_ID_929_J2R1","workerId":"ViktorSokolov","start":"2026-01-05","end":"2026-01-14"},{"taskId":"TASK_ID_1070_7L5U","workerId":"ViktorSokolov","start":"2025-07-28","end":"2025-07-31"},{"taskId":"TASK_ID_1030_FK8C","workerId":"ViktorSokolov","start":"2025-11-05","end":"2025-11-18"},{"taskId":"TASK_ID_262_KTU9","workerId":"SergeySidorov","start":"2025-06-23","end":"2025-06-26"},{"taskId":"TASK_ID_519_D97U","workerId":"DmitryVolkov","start":"2025-07-31","end":"2025-08-08"},{"taskId":"TASK_ID_790_FDIC","workerId":"SergeySidorov","start":"2025-08-05","end":"2025-08-06"},{"taskId":"TASK_ID_375_89DN","workerId":"ViktorSokolov","start":"2025-08-27","end":"2025-09-03"},{"taskId":"TASK_ID_561_7BDR","workerId":"AlexeyFedorov","start":"2025-04-10","end":"2025-04-16"},{"taskId":"TASK_ID_555_AK9W","workerId":"ViktorSokolov","start":"2025-06-16","end":"2025-06-17"},{"taskId":"TASK_ID_176_V77K","workerId":"DmitryVolkov","start":"2025-11-19","end":"2025-11-25"},{"taskId":"TASK_ID_73_XVF2","workerId":"AlexeyFedorov","start":"2025-06-11","end":"2025-06-19"},{"taskId":"TASK_ID_729_DAI1","workerId":"DmitryVolkov","start":"2025-10-14","end":"2025-10-15"},{"taskId":"TASK_ID_203_8PHU","workerId":"AlexeyFedorov","start":"2025-08-18","end":"2025-08-27"},{"taskId":"TASK_ID_456_UET2","workerId":"AnnaIvanova","start":"2025-04-18","end":"2025-04-24"},{"taskId":"TASK_ID_165_45AH","workerId":"OlgaSmirnova","start":"2025-10-02","end":"2025-10-09"},{"taskId":"TASK_ID_376_D38A","workerId":"SergeySidorov","start":"2025-08-29","end":"2025-09-11"},{"taskId":"TASK_ID_522_5J6P","workerId":"AnnaIvanova","start":"2025-07-30","end":"2025-07-31"},{"taskId":"TASK_ID_535_Z7W3","workerId":"ViktorSokolov","start":"2026-03-09","end":"2026-03-18"},{"taskId":"TASK_ID_1085_87G2","workerId":"ViktorSokolov","start":"2025-08-11","end":"2025-08-21"},{"taskId":"TASK_ID_1143_JOQD","workerId":"DmitryVolkov","start":"2025-04-25","end":"2025-04-30"},{"taskId":"TASK_ID_792_1QW4","workerId":"OlgaSmirnova","start":"2025-07-02","end":"2025-07-25"},{"taskId":"TASK_ID_801_XML9","workerId":"DmitryVolkov","start":"2025-04-11","end":"2025-04-14"},{"taskId":"TASK_ID_205_XD0V","workerId":"DmitryVolkov","start":"2025-10-06","end":"2025-10-10"},{"taskId":"TASK_ID_755_RBIB","workerId":"SergeySidorov","start":"2025-05-14","end":"2025-05-19"},{"taskId":"TASK_ID_802_YAM0","workerId":"SergeySidorov","start":"2025-04-10","end":"2025-04-10"},{"taskId":"TASK_ID_583_N8LL","workerId":"AnnaIvanova","start":"2025-09-02","end":"2025-09-10"},{"taskId":"TASK_ID_264_35S3","workerId":"SergeySidorov","start":"2025-06-27","end":"2025-06-27"},{"taskId":"TASK_ID_174_KUZK","workerId":"AnnaIvanova","start":"2025-10-09","end":"2025-10-22"},{"taskId":"TASK_ID_724_F2TR","workerId":"AlexeyFedorov","start":"2025-11-14","end":"2025-11-24"},{"taskId":"TASK_ID_887_Y0XZ","workerId":"AlexeyFedorov","start":"2025-05-15","end":"2025-05-26"},{"taskId":"TASK_ID_1041_NBOE","workerId":"SergeySidorov","start":"2026-02-10","end":"2026-02-18"},{"taskId":"TASK_ID_1032_I5RL","workerId":"IvanPetrov","start":"2025-12-11","end":"2025-12-16"},{"taskId":"TASK_ID_418_UTPX","workerId":"OlgaSmirnova","start":"2025-11-18","end":"2025-12-09"},{"taskId":"TASK_ID_819_4MOV","workerId":"DmitryVolkov","start":"2025-07-03","end":"2025-07-09"},{"taskId":"TASK_ID_596_5AWT","workerId":"SergeySidorov","start":"2025-12-25","end":"2026-01-01"},{"taskId":"TASK_ID_595_ZIKI","workerId":"AnnaIvanova","start":"2025-12-24","end":"2025-12-25"},{"taskId":"TASK_ID_1144_BJ9F","workerId":"SergeySidorov","start":"2025-04-28","end":"2025-05-13"},{"taskId":"TASK_ID_1141_XLPC","workerId":"OlgaSmirnova","start":"2025-09-16","end":"2025-10-01"},{"taskId":"TASK_ID_556_PWF9","workerId":"DmitryVolkov","start":"2025-06-13","end":"2025-06-19"},{"taskId":"TASK_ID_550_11J9","workerId":"OlgaSmirnova","start":"2025-05-20","end":"2025-06-04"},{"taskId":"TASK_ID_753_9FOA","workerId":"OlgaSmirnova","start":"2025-04-30","end":"2025-05-06"},{"taskId":"TASK_ID_106_F7HG","workerId":"OlgaSmirnova","start":"2025-08-11","end":"2025-09-01"},{"taskId":"TASK_ID_597_HMIQ","workerId":"IvanPetrov","start":"2025-12-29","end":"2026-01-05"},{"taskId":"TASK_ID_820_KEGG","workerId":"AnnaIvanova","start":"2025-07-01","end":"2025-07-10"},{"taskId":"TASK_ID_328_RP79","workerId":"AnnaIvanova","start":"2026-01-28","end":"2026-02-13"},{"taskId":"TASK_ID_263_CYPZ","workerId":"AlexeyFedorov","start":"2025-06-24","end":"2025-07-01"},{"taskId":"TASK_ID_551_6RFW","workerId":"ViktorSokolov","start":"2025-05-30","end":"2025-06-02"},{"taskId":"TASK_ID_727_1K8Z","workerId":"AnnaIvanova","start":"2025-09-29","end":"2025-10-08"},{"taskId":"TASK_ID_800_G0WX","workerId":"AlexeyFedorov","start":"2025-04-04","end":"2025-04-09"},{"taskId":"TASK_ID_148_HCIF","workerId":"OlgaSmirnova","start":"2025-05-07","end":"2025-05-15"},{"taskId":"TASK_ID_868_SXPS","workerId":"ViktorSokolov","start":"2025-12-11","end":"2025-12-24"},{"taskId":"TASK_ID_866_MHHY","workerId":"AnnaIvanova","start":"2025-11-19","end":"2025-12-04"},{"taskId":"TASK_ID_389_PPJZ","workerId":"OlgaSmirnova","start":"2025-08-07","end":"2025-08-08"},{"taskId":"TASK_ID_557_TSD1","workerId":"DmitryVolkov","start":"2025-04-15","end":"2025-04-18"},{"taskId":"TASK_ID_726_M0TN","workerId":"IvanPetrov","start":"2025-12-26","end":"2025-12-26"},{"taskId":"TASK_ID_1017_AM0W","workerId":"OlgaSmirnova","start":"2025-12-26","end":"2026-01-14"},{"taskId":"TASK_ID_480_2IL9","workerId":"AnnaIvanova","start":"2025-04-25","end":"2025-04-30"},{"taskId":"TASK_ID_601_U2T4","workerId":"IvanPetrov","start":"2026-01-06","end":"2026-01-15"},{"taskId":"TASK_ID_1138_L912","workerId":"AnnaIvanova","start":"2025-09-11","end":"2025-09-12"},{"taskId":"TASK_ID_534_1ZWP","workerId":"OlgaSmirnova","start":"2026-02-20","end":"2026-03-05"},{"taskId":"TASK_ID_414_J4OS","workerId":"AnnaIvanova","start":"2025-11-12","end":"2025-11-18"},{"taskId":"TASK_ID_253_N3FR","workerId":"ViktorSokolov","start":"2025-04-21","end":"2025-05-05"},{"taskId":"TASK_ID_147_TNMV","workerId":"OlgaSmirnova","start":"2025-05-16","end":"2025-05-19"},{"taskId":"TASK_ID_177_4RNG","workerId":"ViktorSokolov","start":"2025-10-17","end":"2025-10-27"},{"taskId":"TASK_ID_183_WNZL","workerId":"IvanPetrov","start":"2025-12-04","end":"2025-12-10"},{"taskId":"TASK_ID_582_POQW","workerId":"DmitryVolkov","start":"2025-09-01","end":"2025-09-04"},{"taskId":"TASK_ID_373_MDVG","workerId":"AnnaIvanova","start":"2025-08-15","end":"2025-08-26"},{"taskId":"TASK_ID_181_6I15","workerId":"AlexeyFedorov","start":"2025-10-30","end":"2025-11-06"},{"taskId":"TASK_ID_742_5CZ2","workerId":"OlgaSmirnova","start":"2025-06-05","end":"2025-06-19"},{"taskId":"TASK_ID_202_S3Y2","workerId":"AnnaIvanova","start":"2025-09-15","end":"2025-09-26"},{"taskId":"TASK_ID_536_6DCD","workerId":"AnnaIvanova","start":"2026-02-16","end":"2026-03-03"},{"taskId":"TASK_ID_786_IW3T","workerId":"AnnaIvanova","start":"2025-07-17","end":"2025-07-29"},{"taskId":"TASK_ID_330_TBCU","workerId":"IvanPetrov","start":"2026-02-17","end":"2026-02-19"},{"taskId":"TASK_ID_420_XALD","workerId":"OlgaSmirnova","start":"2025-07-28","end":"2025-07-31"},{"taskId":"TASK_ID_586_KQGB","workerId":"DmitryVolkov","start":"2025-09-24","end":"2025-10-01"},{"taskId":"TASK_ID_416_1AYG","workerId":"AlexeyFedorov","start":"2025-11-13","end":"2025-11-13"},{"taskId":"TASK_ID_75_UJ2G","workerId":"DmitryVolkov","start":"2025-06-20","end":"2025-06-30"},{"taskId":"TASK_ID_752_9W1K","workerId":"AlexeyFedorov","start":"2025-04-25","end":"2025-05-07"},{"taskId":"TASK_ID_1040_6DCS","workerId":"IvanPetrov","start":"2026-01-27","end":"2026-01-30"},{"taskId":"TASK_ID_537_LNTZ","workerId":"IvanPetrov","start":"2026-03-16","end":"2026-03-25"},{"taskId":"TASK_ID_276_M9NE","workerId":"ViktorSokolov","start":"2025-04-15","end":"2025-04-18"},{"taskId":"TASK_ID_804_5CW4","workerId":"ViktorSokolov","start":"2025-04-11","end":"2025-04-14"},{"taskId":"TASK_ID_818_FIPM","workerId":"SergeySidorov","start":"2025-06-30","end":"2025-06-30"},{"taskId":"TASK_ID_889_NILI","workerId":"AnnaIvanova","start":"2025-05-02","end":"2025-05-16"},{"taskId":"TASK_ID_1015_6TUB","workerId":"ViktorSokolov","start":"2025-05-20","end":"2025-05-29"},{"taskId":"TASK_ID_415_YXNV","workerId":"OlgaSmirnova","start":"2025-11-14","end":"2025-11-17"},{"taskId":"TASK_ID_584_PDKM","workerId":"ViktorSokolov","start":"2025-09-16","end":"2025-09-23"},{"taskId":"TASK_ID_839_2CUH","workerId":"AnnaIvanova","start":"2025-10-23","end":"2025-11-11"},{"taskId":"TASK_ID_896_GK6Z","workerId":"AlexeyFedorov","start":"2025-08-28","end":"2025-09-01"},{"taskId":"TASK_ID_587_PTUT","workerId":"ViktorSokolov","start":"2025-09-04","end":"2025-09-11"},{"taskId":"TASK_ID_744_MOCP","workerId":"ViktorSokolov","start":"2025-06-20","end":"2025-06-23"},{"taskId":"TASK_ID_105_FQGH","workerId":"AnnaIvanova","start":"2025-08-27","end":"2025-09-01"},{"taskId":"TASK_ID_422_DACQ","workerId":"ViktorSokolov","start":"2025-08-01","end":"2025-08-08"},{"taskId":"TASK_ID_484_N4T6","workerId":"SergeySidorov","start":"2025-06-02","end":"2025-06-06"},{"taskId":"TASK_ID_867_6MEA","workerId":"AnnaIvanova","start":"2025-12-05","end":"2025-12-10"},{"taskId":"TASK_ID_869_JE70","workerId":"SergeySidorov","start":"2025-12-16","end":"2025-12-24"},{"taskId":"TASK_ID_1083_M8Q2","workerId":"AlexeyFedorov","start":"2025-07-31","end":"2025-08-06"},{"taskId":"TASK_ID_372_KO8S","workerId":"AlexeyFedorov","start":"2025-08-07","end":"2025-08-07"},{"taskId":"TASK_ID_417_DJ3D","workerId":"IvanPetrov","start":"2025-12-17","end":"2025-12-25"},{"taskId":"TASK_ID_1031_KV02","workerId":"ViktorSokolov","start":"2025-11-24","end":"2025-12-05"},{"taskId":"TASK_ID_599_EUEZ","workerId":"ViktorSokolov","start":"2025-12-26","end":"2025-12-26"},{"taskId":"TASK_ID_485_KJDR","workerId":"SergeySidorov","start":"2025-06-10","end":"2025-06-20"},{"taskId":"TASK_ID_180_GFL7","workerId":"OlgaSmirnova","start":"2025-10-10","end":"2025-10-13"},{"taskId":"TASK_ID_789_NJB5","workerId":"ViktorSokolov","start":"2025-07-22","end":"2025-07-22"},{"taskId":"TASK_ID_481_JOGF","workerId":"SergeySidorov","start":"2025-05-20","end":"2025-05-30"},{"taskId":"TASK_ID_822_NLQZ","workerId":"DmitryVolkov","start":"2025-07-11","end":"2025-07-18"},{"taskId":"TASK_ID_374_EVYS","workerId":"SergeySidorov","start":"2025-08-19","end":"2025-08-28"},{"taskId":"TASK_ID_1061_R33W","workerId":"SergeySidorov","start":"2025-07-17","end":"2025-07-23"},{"taskId":"TASK_ID_483_VGS9","workerId":"DmitryVolkov","start":"2025-06-02","end":"2025-06-09"},{"taskId":"TASK_ID_1014_9IK1","workerId":"AnnaIvanova","start":"2025-05-19","end":"2025-05-29"},{"taskId":"TASK_ID_1088_VLOZ","workerId":"OlgaSmirnova","start":"2025-09-02","end":"2025-09-15"},{"taskId":"TASK_ID_191_DCLN","workerId":"OlgaSmirnova","start":"2025-06-20","end":"2025-07-01"},{"taskId":"TASK_ID_1042_4MFV","workerId":"IvanPetrov","start":"2026-02-10","end":"2026-02-16"},{"taskId":"TASK_ID_791_XOPR","workerId":"DmitryVolkov","start":"2025-07-23","end":"2025-07-29"},{"taskId":"TASK_ID_521_3GBO","workerId":"AnnaIvanova","start":"2025-08-01","end":"2025-08-11"},{"taskId":"TASK_ID_1069_6LI5","workerId":"ViktorSokolov","start":"2025-07-23","end":"2025-07-25"},{"taskId":"TASK_ID_533_HP6U","workerId":"ViktorSokolov","start":"2026-03-02","end":"2026-03-06"},{"taskId":"TASK_ID_76_G8VY","workerId":"DmitryVolkov","start":"2025-07-01","end":"2025-07-02"},{"taskId":"TASK_ID_600_W3I1","workerId":"OlgaSmirnova","start":"2025-12-22","end":"2025-12-25"},{"taskId":"TASK_ID_560_FO48","workerId":"DmitryVolkov","start":"2025-04-21","end":"2025-04-24"},{"taskId":"TASK_ID_1039_AP4Z","workerId":"OlgaSmirnova","start":"2026-01-15","end":"2026-02-09"},{"taskId":"TASK_ID_192_ARMF","workerId":"ViktorSokolov","start":"2025-06-24","end":"2025-07-07"},{"taskId":"TASK_ID_179_XEBA","workerId":"OlgaSmirnova","start":"2025-10-14","end":"2025-10-23"},{"taskId":"TASK_ID_419_S287","workerId":"DmitryVolkov","start":"2025-12-26","end":"2025-12-26"},{"taskId":"TASK_ID_787_WN4B","workerId":"AlexeyFedorov","start":"2025-07-17","end":"2025-07-24"},{"taskId":"TASK_ID_1086_JJAQ","workerId":"OlgaSmirnova","start":"2025-08-01","end":"2025-08-06"},{"taskId":"TASK_ID_886_URTV","workerId":"AlexeyFedorov","start":"2025-05-08","end":"2025-05-14"},{"taskId":"TASK_ID_554_OZX1","workerId":"DmitryVolkov","start":"2025-06-11","end":"2025-06-11"},{"taskId":"TASK_ID_897_N4EY","workerId":"AlexeyFedorov","start":"2025-09-02","end":"2025-09-03"},{"taskId":"TASK_ID_204_NHLB","workerId":"ViktorSokolov","start":"2025-09-24","end":"2025-10-07"},{"taskId":"TASK_ID_743_0U9E","workerId":"AnnaIvanova","start":"2025-05-30","end":"2025-06-10"},{"taskId":"TASK_ID_803_EAX2","workerId":"SergeySidorov","start":"2025-04-15","end":"2025-04-25"},{"taskId":"TASK_ID_1139_6S2G","workerId":"AlexeyFedorov","start":"2025-08-08","end":"2025-08-15"},{"taskId":"TASK_ID_751_NK27","workerId":"ViktorSokolov","start":"2025-05-06","end":"2025-05-19"},{"taskId":"TASK_ID_1057_A4SP","workerId":"AnnaIvanova","start":"2025-07-11","end":"2025-07-14"},{"taskId":"TASK_ID_275_CAAU","workerId":"OlgaSmirnova","start":"2025-04-04","end":"2025-04-29"},{"taskId":"TASK_ID_1058_JR06","workerId":"AlexeyFedorov","start":"2025-07-11","end":"2025-07-16"},{"taskId":"TASK_ID_574_LUNO","workerId":"ViktorSokolov","start":"2025-07-08","end":"2025-07-21"},{"taskId":"TASK_ID_930_5ZFR","workerId":"AnnaIvanova","start":"2025-12-26","end":"2026-01-05"},{"taskId":"TASK_ID_261_LTST","workerId":"AlexeyFedorov","start":"2025-06-20","end":"2025-06-23"}]
+[
+    {
+        "taskId": "TASK_ID_364_PA1E",
+        "workerId": "IvanPetrov",
+        "start": "2025-06-02",
+        "end": "2025-06-04"
+    },
+    {
+        "taskId": "TASK_ID_365_29VK",
+        "workerId": "SergeySidorov",
+        "start": "2025-06-02",
+        "end": "2025-06-10"
+    },
+    {
+        "taskId": "TASK_ID_709_U54U",
+        "workerId": "DmitryVolkov",
+        "start": "2025-06-02",
+        "end": "2025-06-11"
+    },
+    {
+        "taskId": "TASK_ID_708_G46J",
+        "workerId": "ViktorSokolov",
+        "start": "2025-06-02",
+        "end": "2025-06-03"
+    },
+    {
+        "taskId": "TASK_ID_115_M6ZJ",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-06-02",
+        "end": "2025-06-11"
+    },
+    {
+        "taskId": "TASK_ID_116_T5FA",
+        "workerId": "OlgaSmirnova",
+        "start": "2025-06-02",
+        "end": "2025-06-04"
+    },
+    {
+        "taskId": "TASK_ID_658_Z28H",
+        "workerId": "ViktorSokolov",
+        "start": "2025-06-04",
+        "end": "2025-06-13"
+    },
+    {
+        "taskId": "TASK_ID_659_3188",
+        "workerId": "AnnaIvanova",
+        "start": "2025-06-04",
+        "end": "2025-06-19"
+    },
+    {
+        "taskId": "TASK_ID_1020_NZO1",
+        "workerId": "DmitryVolkov",
+        "start": "2025-06-13",
+        "end": "2025-06-19"
+    },
+    {
+        "taskId": "TASK_ID_1021_MPMX",
+        "workerId": "IvanPetrov",
+        "start": "2025-06-05",
+        "end": "2025-06-09"
+    },
+    {
+        "taskId": "TASK_ID_1022_QSUE",
+        "workerId": "OlgaSmirnova",
+        "start": "2025-06-13",
+        "end": "2025-06-17"
+    },
+    {
+        "taskId": "TASK_ID_1023_V7YU",
+        "workerId": "SergeySidorov",
+        "start": "2025-06-18",
+        "end": "2025-06-20"
+    },
+    {
+        "taskId": "TASK_ID_887_Y0XZ",
+        "workerId": "IvanPetrov",
+        "start": "2025-06-10",
+        "end": "2025-06-23"
+    },
+    {
+        "taskId": "TASK_ID_492_JWYP",
+        "workerId": "DmitryVolkov",
+        "start": "2025-06-20",
+        "end": "2025-06-24"
+    },
+    {
+        "taskId": "TASK_ID_857_29FW",
+        "workerId": "ViktorSokolov",
+        "start": "2025-06-16",
+        "end": "2025-06-30"
+    },
+    {
+        "taskId": "TASK_ID_856_48E0",
+        "workerId": "OlgaSmirnova",
+        "start": "2025-06-18",
+        "end": "2025-06-20"
+    },
+    {
+        "taskId": "TASK_ID_265_I6IC",
+        "workerId": "IvanPetrov",
+        "start": "2025-06-24",
+        "end": "2025-07-01"
+    },
+    {
+        "taskId": "TASK_ID_1047_YZS0",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-06-30",
+        "end": "2025-07-10"
+    },
+    {
+        "taskId": "TASK_ID_969_V3JX",
+        "workerId": "AnnaIvanova",
+        "start": "2025-07-02",
+        "end": "2025-07-14"
+    },
+    {
+        "taskId": "TASK_ID_970_R9PI",
+        "workerId": "ViktorSokolov",
+        "start": "2025-07-01",
+        "end": "2025-07-03"
+    },
+    {
+        "taskId": "TASK_ID_720_VQNF",
+        "workerId": "DmitryVolkov",
+        "start": "2025-07-02",
+        "end": "2025-07-10"
+    },
+    {
+        "taskId": "TASK_ID_721_Y6FD",
+        "workerId": "IvanPetrov",
+        "start": "2025-07-02",
+        "end": "2025-07-09"
+    },
+    {
+        "taskId": "TASK_ID_722_E19Q",
+        "workerId": "SergeySidorov",
+        "start": "2025-07-02",
+        "end": "2025-07-04"
+    },
+    {
+        "taskId": "TASK_ID_723_TEIQ",
+        "workerId": "DmitryVolkov",
+        "start": "2025-07-11",
+        "end": "2025-07-15"
+    },
+    {
+        "taskId": "TASK_ID_667_S6JV",
+        "workerId": "OlgaSmirnova",
+        "start": "2025-06-23",
+        "end": "2025-07-09"
+    },
+    {
+        "taskId": "TASK_ID_669_T6V1",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-06-20",
+        "end": "2025-06-27"
+    },
+    {
+        "taskId": "TASK_ID_668_80Q2",
+        "workerId": "AnnaIvanova",
+        "start": "2025-06-20",
+        "end": "2025-07-01"
+    },
+    {
+        "taskId": "TASK_ID_670_ARHL",
+        "workerId": "IvanPetrov",
+        "start": "2025-07-10",
+        "end": "2025-07-17"
+    },
+    {
+        "taskId": "TASK_ID_574_LUNO",
+        "workerId": "ViktorSokolov",
+        "start": "2025-07-04",
+        "end": "2025-07-18"
+    },
+    {
+        "taskId": "TASK_ID_1034_UCQB",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-07-11",
+        "end": "2025-07-17"
+    },
+    {
+        "taskId": "TASK_ID_1035_D4JV",
+        "workerId": "SergeySidorov",
+        "start": "2025-07-11",
+        "end": "2025-07-23"
+    },
+    {
+        "taskId": "TASK_ID_580_WSJA",
+        "workerId": "OlgaSmirnova",
+        "start": "2025-07-10",
+        "end": "2025-07-24"
+    },
+    {
+        "taskId": "TASK_ID_581_WHNA",
+        "workerId": "DmitryVolkov",
+        "start": "2025-07-16",
+        "end": "2025-07-23"
+    },
+    {
+        "taskId": "TASK_ID_101_3T8W",
+        "workerId": "IvanPetrov",
+        "start": "2025-07-18",
+        "end": "2025-07-21"
+    },
+    {
+        "taskId": "TASK_ID_100_9RBL",
+        "workerId": "IvanPetrov",
+        "start": "2025-07-22",
+        "end": "2025-07-29"
+    },
+    {
+        "taskId": "TASK_ID_99_UXDF",
+        "workerId": "ViktorSokolov",
+        "start": "2025-07-22",
+        "end": "2025-07-24"
+    },
+    {
+        "taskId": "TASK_ID_98_82BV",
+        "workerId": "AnnaIvanova",
+        "start": "2025-07-22",
+        "end": "2025-07-24"
+    },
+    {
+        "taskId": "TASK_ID_446_JLUV",
+        "workerId": "OlgaSmirnova",
+        "start": "2025-07-25",
+        "end": "2025-08-06"
+    },
+    {
+        "taskId": "TASK_ID_865_6KPP",
+        "workerId": "DmitryVolkov",
+        "start": "2025-07-24",
+        "end": "2025-07-30"
+    },
+    {
+        "taskId": "TASK_ID_864_P6L2",
+        "workerId": "SergeySidorov",
+        "start": "2025-07-24",
+        "end": "2025-08-07"
+    },
+    {
+        "taskId": "TASK_ID_535_Z7W3",
+        "workerId": "ViktorSokolov",
+        "start": "2025-07-25",
+        "end": "2025-08-06"
+    },
+    {
+        "taskId": "TASK_ID_533_HP6U",
+        "workerId": "AnnaIvanova",
+        "start": "2025-07-25",
+        "end": "2025-08-05"
+    },
+    {
+        "taskId": "TASK_ID_534_1ZWP",
+        "workerId": "DmitryVolkov",
+        "start": "2025-07-31",
+        "end": "2025-08-06"
+    },
+    {
+        "taskId": "TASK_ID_537_LNTZ",
+        "workerId": "IvanPetrov",
+        "start": "2025-07-31",
+        "end": "2025-08-12"
+    },
+    {
+        "taskId": "TASK_ID_536_6DCD",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-07-31",
+        "end": "2025-08-11"
+    },
+    {
+        "taskId": "TASK_ID_920_W77G",
+        "workerId": "ViktorSokolov",
+        "start": "2025-08-07",
+        "end": "2025-08-19"
+    },
+    {
+        "taskId": "TASK_ID_919_TMQ3",
+        "workerId": "DmitryVolkov",
+        "start": "2025-08-07",
+        "end": "2025-08-11"
+    },
+    {
+        "taskId": "TASK_ID_590_A5T0",
+        "workerId": "SergeySidorov",
+        "start": "2025-08-08",
+        "end": "2025-08-18"
+    },
+    {
+        "taskId": "TASK_ID_591_TB7R",
+        "workerId": "DmitryVolkov",
+        "start": "2025-08-12",
+        "end": "2025-08-20"
+    },
+    {
+        "taskId": "TASK_ID_113_OAZ8",
+        "workerId": "OlgaSmirnova",
+        "start": "2025-08-07",
+        "end": "2025-08-21"
+    },
+    {
+        "taskId": "TASK_ID_981_4J3E",
+        "workerId": "AnnaIvanova",
+        "start": "2025-08-06",
+        "end": "2025-08-22"
+    },
+    {
+        "taskId": "TASK_ID_519_D97U",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-08-13",
+        "end": "2025-08-25"
+    },
+    {
+        "taskId": "TASK_ID_521_3GBO",
+        "workerId": "IvanPetrov",
+        "start": "2025-08-13",
+        "end": "2025-08-19"
+    },
+    {
+        "taskId": "TASK_ID_495_5NP1",
+        "workerId": "OlgaSmirnova",
+        "start": "2025-08-22",
+        "end": "2025-09-01"
+    },
+    {
+        "taskId": "TASK_ID_794_SLJ7",
+        "workerId": "SergeySidorov",
+        "start": "2025-08-19",
+        "end": "2025-08-22"
+    },
+    {
+        "taskId": "TASK_ID_793_IU8H",
+        "workerId": "IvanPetrov",
+        "start": "2025-08-20",
+        "end": "2025-09-01"
+    },
+    {
+        "taskId": "TASK_ID_1143_JOQD",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-08-26",
+        "end": "2025-09-02"
+    },
+    {
+        "taskId": "TASK_ID_456_UET2",
+        "workerId": "ViktorSokolov",
+        "start": "2025-08-21",
+        "end": "2025-08-27"
+    },
+    {
+        "taskId": "TASK_ID_457_I4RD",
+        "workerId": "DmitryVolkov",
+        "start": "2025-08-21",
+        "end": "2025-08-27"
+    },
+    {
+        "taskId": "TASK_ID_458_J0BA",
+        "workerId": "IvanPetrov",
+        "start": "2025-09-02",
+        "end": "2025-09-03"
+    },
+    {
+        "taskId": "TASK_ID_757_XT7J",
+        "workerId": "SergeySidorov",
+        "start": "2025-08-28",
+        "end": "2025-09-03"
+    },
+    {
+        "taskId": "TASK_ID_756_3GFF",
+        "workerId": "DmitryVolkov",
+        "start": "2025-08-28",
+        "end": "2025-09-04"
+    },
+    {
+        "taskId": "TASK_ID_758_0JFB",
+        "workerId": "IvanPetrov",
+        "start": "2025-09-04",
+        "end": "2025-09-05"
+    },
+    {
+        "taskId": "TASK_ID_530_YHNE",
+        "workerId": "AnnaIvanova",
+        "start": "2025-09-02",
+        "end": "2025-09-08"
+    },
+    {
+        "taskId": "TASK_ID_286_5USF",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-09-05",
+        "end": "2025-09-08"
+    },
+    {
+        "taskId": "TASK_ID_158_NO6C",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-09-09",
+        "end": "2025-09-15"
+    },
+    {
+        "taskId": "TASK_ID_859_L0FL",
+        "workerId": "ViktorSokolov",
+        "start": "2025-08-28",
+        "end": "2025-09-04"
+    },
+    {
+        "taskId": "TASK_ID_858_HSIE",
+        "workerId": "AnnaIvanova",
+        "start": "2025-08-28",
+        "end": "2025-09-01"
+    },
+    {
+        "taskId": "TASK_ID_860_LOBT",
+        "workerId": "SergeySidorov",
+        "start": "2025-09-08",
+        "end": "2025-09-16"
+    },
+    {
+        "taskId": "TASK_ID_861_5OMQ",
+        "workerId": "IvanPetrov",
+        "start": "2025-09-08",
+        "end": "2025-09-17"
+    },
+    {
+        "taskId": "TASK_ID_208_H0Z3",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-09-16",
+        "end": "2025-09-24"
+    },
+    {
+        "taskId": "TASK_ID_1098_XJKC",
+        "workerId": "AnnaIvanova",
+        "start": "2025-09-30",
+        "end": "2025-10-03"
+    },
+    {
+        "taskId": "TASK_ID_1099_F3KP",
+        "workerId": "AnnaIvanova",
+        "start": "2025-09-22",
+        "end": "2025-09-29"
+    },
+    {
+        "taskId": "TASK_ID_481_JOGF",
+        "workerId": "ViktorSokolov",
+        "start": "2025-09-05",
+        "end": "2025-09-18"
+    },
+    {
+        "taskId": "TASK_ID_480_2IL9",
+        "workerId": "DmitryVolkov",
+        "start": "2025-09-05",
+        "end": "2025-09-09"
+    },
+    {
+        "taskId": "TASK_ID_482_6V5N",
+        "workerId": "IvanPetrov",
+        "start": "2025-09-19",
+        "end": "2025-09-24"
+    },
+    {
+        "taskId": "TASK_ID_483_VGS9",
+        "workerId": "DmitryVolkov",
+        "start": "2025-09-19",
+        "end": "2025-09-29"
+    },
+    {
+        "taskId": "TASK_ID_484_N4T6",
+        "workerId": "ViktorSokolov",
+        "start": "2025-09-25",
+        "end": "2025-10-02"
+    },
+    {
+        "taskId": "TASK_ID_485_KJDR",
+        "workerId": "SergeySidorov",
+        "start": "2025-09-25",
+        "end": "2025-10-07"
+    },
+    {
+        "taskId": "TASK_ID_272_EI5R",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-10-02",
+        "end": "2025-10-10"
+    },
+    {
+        "taskId": "TASK_ID_902_7SM5",
+        "workerId": "ViktorSokolov",
+        "start": "2025-10-17",
+        "end": "2025-10-21"
+    },
+    {
+        "taskId": "TASK_ID_901_B70D",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-10-13",
+        "end": "2025-10-23"
+    },
+    {
+        "taskId": "TASK_ID_373_MDVG",
+        "workerId": "OlgaSmirnova",
+        "start": "2025-09-02",
+        "end": "2025-09-18"
+    },
+    {
+        "taskId": "TASK_ID_372_KO8S",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-09-03",
+        "end": "2025-09-04"
+    },
+    {
+        "taskId": "TASK_ID_375_89DN",
+        "workerId": "AnnaIvanova",
+        "start": "2025-09-09",
+        "end": "2025-09-19"
+    },
+    {
+        "taskId": "TASK_ID_374_EVYS",
+        "workerId": "OlgaSmirnova",
+        "start": "2025-09-19",
+        "end": "2025-10-13"
+    },
+    {
+        "taskId": "TASK_ID_376_D38A",
+        "workerId": "IvanPetrov",
+        "start": "2025-10-14",
+        "end": "2025-10-24"
+    },
+    {
+        "taskId": "TASK_ID_550_11J9",
+        "workerId": "ViktorSokolov",
+        "start": "2025-10-03",
+        "end": "2025-10-13"
+    },
+    {
+        "taskId": "TASK_ID_551_6RFW",
+        "workerId": "DmitryVolkov",
+        "start": "2025-09-30",
+        "end": "2025-10-02"
+    },
+    {
+        "taskId": "TASK_ID_552_BDS1",
+        "workerId": "DmitryVolkov",
+        "start": "2025-10-14",
+        "end": "2025-10-20"
+    },
+    {
+        "taskId": "TASK_ID_553_DCCE",
+        "workerId": "SergeySidorov",
+        "start": "2025-10-14",
+        "end": "2025-10-22"
+    },
+    {
+        "taskId": "TASK_ID_555_AK9W",
+        "workerId": "SergeySidorov",
+        "start": "2025-10-23",
+        "end": "2025-10-27"
+    },
+    {
+        "taskId": "TASK_ID_554_OZX1",
+        "workerId": "DmitryVolkov",
+        "start": "2025-10-23",
+        "end": "2025-10-24"
+    },
+    {
+        "taskId": "TASK_ID_556_PWF9",
+        "workerId": "IvanPetrov",
+        "start": "2025-10-27",
+        "end": "2025-11-03"
+    },
+    {
+        "taskId": "TASK_ID_921_XHP9",
+        "workerId": "ViktorSokolov",
+        "start": "2025-10-22",
+        "end": "2025-10-31"
+    },
+    {
+        "taskId": "TASK_ID_923_Y8CG",
+        "workerId": "OlgaSmirnova",
+        "start": "2025-10-22",
+        "end": "2025-11-10"
+    },
+    {
+        "taskId": "TASK_ID_924_76P6",
+        "workerId": "AnnaIvanova",
+        "start": "2025-10-22",
+        "end": "2025-11-03"
+    },
+    {
+        "taskId": "TASK_ID_351_YBA3",
+        "workerId": "AnnaIvanova",
+        "start": "2025-11-05",
+        "end": "2025-11-11"
+    },
+    {
+        "taskId": "TASK_ID_500_Q1FE",
+        "workerId": "ViktorSokolov",
+        "start": "2025-11-03",
+        "end": "2025-11-14"
+    },
+    {
+        "taskId": "TASK_ID_501_MIL6",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-11-03",
+        "end": "2025-11-06"
+    },
+    {
+        "taskId": "TASK_ID_851_RU5L",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-09-25",
+        "end": "2025-10-01"
+    },
+    {
+        "taskId": "TASK_ID_855_6V7B",
+        "workerId": "AnnaIvanova",
+        "start": "2025-10-14",
+        "end": "2025-10-21"
+    },
+    {
+        "taskId": "TASK_ID_850_LH4F",
+        "workerId": "ViktorSokolov",
+        "start": "2025-10-14",
+        "end": "2025-10-16"
+    },
+    {
+        "taskId": "TASK_ID_852_5W1P",
+        "workerId": "SergeySidorov",
+        "start": "2025-11-05",
+        "end": "2025-11-12"
+    },
+    {
+        "taskId": "TASK_ID_853_DLDF",
+        "workerId": "IvanPetrov",
+        "start": "2025-11-05",
+        "end": "2025-11-07"
+    },
+    {
+        "taskId": "TASK_ID_854_KQ2G",
+        "workerId": "DmitryVolkov",
+        "start": "2025-11-13",
+        "end": "2025-11-17"
+    },
+    {
+        "taskId": "TASK_ID_276_M9NE",
+        "workerId": "AnnaIvanova",
+        "start": "2025-11-12",
+        "end": "2025-11-19"
+    },
+    {
+        "taskId": "TASK_ID_1084_XGA2",
+        "workerId": "SergeySidorov",
+        "start": "2025-11-13",
+        "end": "2025-11-25"
+    },
+    {
+        "taskId": "TASK_ID_1083_M8Q2",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-11-13",
+        "end": "2025-11-20"
+    },
+    {
+        "taskId": "TASK_ID_1086_JJAQ",
+        "workerId": "OlgaSmirnova",
+        "start": "2025-11-13",
+        "end": "2025-11-19"
+    },
+    {
+        "taskId": "TASK_ID_1085_87G2",
+        "workerId": "IvanPetrov",
+        "start": "2025-11-10",
+        "end": "2025-11-19"
+    },
+    {
+        "taskId": "TASK_ID_262_KTU9",
+        "workerId": "ViktorSokolov",
+        "start": "2025-11-17",
+        "end": "2025-11-21"
+    },
+    {
+        "taskId": "TASK_ID_261_LTST",
+        "workerId": "AnnaIvanova",
+        "start": "2025-11-20",
+        "end": "2025-11-25"
+    },
+    {
+        "taskId": "TASK_ID_263_CYPZ",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-11-21",
+        "end": "2025-12-01"
+    },
+    {
+        "taskId": "TASK_ID_264_35S3",
+        "workerId": "SergeySidorov",
+        "start": "2025-12-02",
+        "end": "2025-12-03"
+    },
+    {
+        "taskId": "TASK_ID_1056_SGYE",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-12-02",
+        "end": "2025-12-10"
+    },
+    {
+        "taskId": "TASK_ID_148_HCIF",
+        "workerId": "SergeySidorov",
+        "start": "2025-12-11",
+        "end": "2025-12-16"
+    },
+    {
+        "taskId": "TASK_ID_147_TNMV",
+        "workerId": "ViktorSokolov",
+        "start": "2025-12-11",
+        "end": "2025-12-12"
+    },
+    {
+        "taskId": "TASK_ID_596_5AWT",
+        "workerId": "AnnaIvanova",
+        "start": "2025-11-26",
+        "end": "2025-12-08"
+    },
+    {
+        "taskId": "TASK_ID_598_DGL4",
+        "workerId": "OlgaSmirnova",
+        "start": "2025-11-26",
+        "end": "2025-12-02"
+    },
+    {
+        "taskId": "TASK_ID_597_HMIQ",
+        "workerId": "ViktorSokolov",
+        "start": "2025-11-24",
+        "end": "2025-12-04"
+    },
+    {
+        "taskId": "TASK_ID_595_ZIKI",
+        "workerId": "OlgaSmirnova",
+        "start": "2025-12-03",
+        "end": "2025-12-05"
+    },
+    {
+        "taskId": "TASK_ID_600_W3I1",
+        "workerId": "SergeySidorov",
+        "start": "2025-12-08",
+        "end": "2025-12-10"
+    },
+    {
+        "taskId": "TASK_ID_601_U2T4",
+        "workerId": "IvanPetrov",
+        "start": "2025-12-09",
+        "end": "2025-12-19"
+    },
+    {
+        "taskId": "TASK_ID_599_EUEZ",
+        "workerId": "ViktorSokolov",
+        "start": "2025-12-09",
+        "end": "2025-12-10"
+    },
+    {
+        "taskId": "TASK_ID_727_1K8Z",
+        "workerId": "AnnaIvanova",
+        "start": "2025-12-09",
+        "end": "2025-12-19"
+    },
+    {
+        "taskId": "TASK_ID_422_DACQ",
+        "workerId": "ViktorSokolov",
+        "start": "2025-12-15",
+        "end": "2025-12-23"
+    },
+    {
+        "taskId": "TASK_ID_421_LLK1",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-12-15",
+        "end": "2025-12-16"
+    },
+    {
+        "taskId": "TASK_ID_420_XALD",
+        "workerId": "SergeySidorov",
+        "start": "2025-12-17",
+        "end": "2025-12-19"
+    },
+    {
+        "taskId": "TASK_ID_415_YXNV",
+        "workerId": "AnnaIvanova",
+        "start": "2025-12-22",
+        "end": "2025-12-24"
+    },
+    {
+        "taskId": "TASK_ID_414_J4OS",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-12-22",
+        "end": "2025-12-26"
+    },
+    {
+        "taskId": "TASK_ID_973_DU7A",
+        "workerId": "IvanPetrov",
+        "start": "2025-11-20",
+        "end": "2025-11-24"
+    },
+    {
+        "taskId": "TASK_ID_971_XYJ1",
+        "workerId": "IvanPetrov",
+        "start": "2025-12-03",
+        "end": "2025-12-08"
+    },
+    {
+        "taskId": "TASK_ID_972_2Z02",
+        "workerId": "IvanPetrov",
+        "start": "2025-11-25",
+        "end": "2025-12-02"
+    },
+    {
+        "taskId": "TASK_ID_975_LOZM",
+        "workerId": "DmitryVolkov",
+        "start": "2025-11-20",
+        "end": "2025-11-26"
+    },
+    {
+        "taskId": "TASK_ID_974_HKIP",
+        "workerId": "DmitryVolkov",
+        "start": "2025-12-09",
+        "end": "2025-12-17"
+    },
+    {
+        "taskId": "TASK_ID_976_83OR",
+        "workerId": "DmitryVolkov",
+        "start": "2025-12-18",
+        "end": "2025-12-29"
+    },
+    {
+        "taskId": "TASK_ID_296_T55S",
+        "workerId": "DmitryVolkov",
+        "start": "2025-12-30",
+        "end": "2026-01-07"
+    },
+    {
+        "taskId": "TASK_ID_297_M81U",
+        "workerId": "AnnaIvanova",
+        "start": "2025-12-30",
+        "end": "2026-01-01"
+    },
+    {
+        "taskId": "TASK_ID_353_CS0H",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-12-29",
+        "end": "2026-01-08"
+    },
+    {
+        "taskId": "TASK_ID_352_Z7M0",
+        "workerId": "OlgaSmirnova",
+        "start": "2026-01-02",
+        "end": "2026-01-08"
+    },
+    {
+        "taskId": "TASK_ID_1039_AP4Z",
+        "workerId": "OlgaSmirnova",
+        "start": "2025-12-08",
+        "end": "2026-01-01"
+    },
+    {
+        "taskId": "TASK_ID_1038_1QH5",
+        "workerId": "AlexeyFedorov",
+        "start": "2025-12-17",
+        "end": "2025-12-19"
+    },
+    {
+        "taskId": "TASK_ID_1040_6DCS",
+        "workerId": "IvanPetrov",
+        "start": "2025-12-22",
+        "end": "2025-12-26"
+    },
+    {
+        "taskId": "TASK_ID_1041_NBOE",
+        "workerId": "SergeySidorov",
+        "start": "2025-12-22",
+        "end": "2025-12-31"
+    },
+    {
+        "taskId": "TASK_ID_1042_4MFV",
+        "workerId": "IvanPetrov",
+        "start": "2026-01-01",
+        "end": "2026-01-08"
+    },
+    {
+        "taskId": "TASK_ID_840_2MS6",
+        "workerId": "AlexeyFedorov",
+        "start": "2026-01-09",
+        "end": "2026-01-15"
+    },
+    {
+        "taskId": "TASK_ID_839_2CUH",
+        "workerId": "DmitryVolkov",
+        "start": "2026-01-08",
+        "end": "2026-01-19"
+    },
+    {
+        "taskId": "TASK_ID_329_W34J",
+        "workerId": "SergeySidorov",
+        "start": "2026-01-01",
+        "end": "2026-01-15"
+    },
+    {
+        "taskId": "TASK_ID_328_RP79",
+        "workerId": "ViktorSokolov",
+        "start": "2025-12-24",
+        "end": "2026-01-07"
+    },
+    {
+        "taskId": "TASK_ID_330_TBCU",
+        "workerId": "IvanPetrov",
+        "start": "2026-01-16",
+        "end": "2026-01-21"
+    },
+    {
+        "taskId": "TASK_ID_1058_JR06",
+        "workerId": "AlexeyFedorov",
+        "start": "2026-01-16",
+        "end": "2026-01-22"
+    },
+    {
+        "taskId": "TASK_ID_474_VOKF",
+        "workerId": "AnnaIvanova",
+        "start": "2026-01-09",
+        "end": "2026-01-16"
+    },
+    {
+        "taskId": "TASK_ID_475_Q9AT",
+        "workerId": "OlgaSmirnova",
+        "start": "2026-01-09",
+        "end": "2026-01-15"
+    },
+    {
+        "taskId": "TASK_ID_476_NEGX",
+        "workerId": "AnnaIvanova",
+        "start": "2026-01-19",
+        "end": "2026-01-22"
+    },
+    {
+        "taskId": "TASK_ID_185_G57F",
+        "workerId": "SergeySidorov",
+        "start": "2026-01-16",
+        "end": "2026-01-30"
+    },
+    {
+        "taskId": "TASK_ID_184_VP34",
+        "workerId": "ViktorSokolov",
+        "start": "2026-01-22",
+        "end": "2026-01-29"
+    },
+    {
+        "taskId": "TASK_ID_866_MHHY",
+        "workerId": "ViktorSokolov",
+        "start": "2026-01-08",
+        "end": "2026-01-21"
+    },
+    {
+        "taskId": "TASK_ID_867_6MEA",
+        "workerId": "AnnaIvanova",
+        "start": "2026-01-02",
+        "end": "2026-01-08"
+    },
+    {
+        "taskId": "TASK_ID_869_JE70",
+        "workerId": "IvanPetrov",
+        "start": "2026-01-22",
+        "end": "2026-01-29"
+    },
+    {
+        "taskId": "TASK_ID_868_SXPS",
+        "workerId": "DmitryVolkov",
+        "start": "2026-01-22",
+        "end": "2026-02-02"
+    },
+    {
+        "taskId": "TASK_ID_106_F7HG",
+        "workerId": "AnnaIvanova",
+        "start": "2026-01-23",
+        "end": "2026-02-06"
+    },
+    {
+        "taskId": "TASK_ID_105_FQGH",
+        "workerId": "OlgaSmirnova",
+        "start": "2026-01-23",
+        "end": "2026-02-02"
+    },
+    {
+        "taskId": "TASK_ID_930_5ZFR",
+        "workerId": "OlgaSmirnova",
+        "start": "2026-02-03",
+        "end": "2026-02-17"
+    },
+    {
+        "taskId": "TASK_ID_587_PTUT",
+        "workerId": "SergeySidorov",
+        "start": "2026-02-02",
+        "end": "2026-02-10"
+    },
+    {
+        "taskId": "TASK_ID_583_N8LL",
+        "workerId": "IvanPetrov",
+        "start": "2026-01-30",
+        "end": "2026-02-05"
+    },
+    {
+        "taskId": "TASK_ID_582_POQW",
+        "workerId": "ViktorSokolov",
+        "start": "2026-01-30",
+        "end": "2026-02-06"
+    },
+    {
+        "taskId": "TASK_ID_584_PDKM",
+        "workerId": "ViktorSokolov",
+        "start": "2026-02-11",
+        "end": "2026-02-19"
+    },
+    {
+        "taskId": "TASK_ID_585_PV38",
+        "workerId": "DmitryVolkov",
+        "start": "2026-02-11",
+        "end": "2026-02-18"
+    },
+    {
+        "taskId": "TASK_ID_586_KQGB",
+        "workerId": "DmitryVolkov",
+        "start": "2026-02-20",
+        "end": "2026-03-02"
+    },
+    {
+        "taskId": "",
+        "workerId": "IvanPetrov",
+        "start": "2025-06-02",
+        "end": "2025-06-06"
+    }
+]
