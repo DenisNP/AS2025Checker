@@ -6,6 +6,7 @@ from math import ceil
 from models import Orders, WorkPlan, InputData, TaskDetails
 from models.orders import Order, Task
 from models.work_plan import AssignedTask
+from pydantic import TypeAdapter
 
 
 def aggregate_work_plan(orders: Orders, work_plan: WorkPlan, input_data: InputData) -> (Dict[str, TaskDetails], int):
@@ -145,3 +146,7 @@ def calculate_order_cost(order: Order, plan: Dict[str, AssignedTask]) -> tuple[f
     is_completed = penalty < order.earning
     
     return order.earning, penalty, delay_days, is_completed
+
+def save_to_file(_work_plan: WorkPlan, file_name: str):
+    with open(f"data/{file_name}", "w") as f:
+        f.write(_work_plan.model_dump_json(indent=2))

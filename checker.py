@@ -17,7 +17,7 @@ class CheckResult(BaseModel):
     orders_completed: int
     errors: List[str]
     warnings: List[str]
-
+    
     def __str__(self):
         w = "нет" if len(self.warnings) == 0 else "\n\t\t ".join(self.warnings)
         e = "нет" if len(self.errors) == 0 else "\n\t\t ".join(self.errors)

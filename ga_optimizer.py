@@ -61,10 +61,10 @@ class GaOptimizer:
         start_time = time.time()
         
         ga_instance = pygad.GA(
-            num_generations=5,
+            num_generations=15,
             num_parents_mating=6,
             fitness_func=self._fitness_function,
-            sol_per_pop=500,
+            sol_per_pop=20,
             num_genes=len(self.orders.root),
             crossover_type="scattered",
             init_range_low=1,

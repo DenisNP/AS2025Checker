@@ -31,7 +31,7 @@ def validate_task_overlap(task_details: TaskDetails, all_task_details: Dict[str,
                 )
                 errors.append(error_message)  # Добавляем ошибку в глобальный список
 
-def validate_task_duration(task_details: TaskDetails, input_data: InputData, warnings: list):
+def validate_task_duration(task_details: TaskDetails, input_data: InputData, warnings: list) -> int:
     """Проверяет длительность задачи или фиксирует простой."""
     start_date = task_details.assigned_task.start
     end_date = task_details.assigned_task.end
@@ -57,3 +57,7 @@ def validate_task_duration(task_details: TaskDetails, input_data: InputData, war
                 f"но фактическая длительность составляет {actual_duration} раб.дн. "
                 f"(с {start_date} по {end_date})"
             )
+
+            return actual_duration - calculated_duration
+
+    return 0
