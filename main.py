@@ -4,7 +4,7 @@ from ga_optimizer import GaOptimizer
 from gantt_chart import create_gantt_chart
 from models import InputData, Orders, WorkPlan
 from simple_optimizer import SimpleOptimizer
-from utils import load_json, load_from_file, save_to_file
+from utils import load_json, save_to_file
 
 def optimize_simple(_input_data: InputData, _orders: Orders) -> WorkPlan:
     simple_optimizer = SimpleOptimizer(_input_data, _orders)
