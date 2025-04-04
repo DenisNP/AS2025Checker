@@ -6,7 +6,6 @@ from math import ceil
 from models import Orders, WorkPlan, InputData, TaskDetails
 from models.orders import Order, Task
 from models.work_plan import AssignedTask
-from pydantic import TypeAdapter
 
 
 def aggregate_work_plan(orders: Orders, work_plan: WorkPlan, input_data: InputData) -> (Dict[str, TaskDetails], int):
