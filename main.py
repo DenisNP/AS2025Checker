@@ -18,18 +18,7 @@ def optimize_genetic(_input_data: InputData, _orders: Orders) -> WorkPlan:
 
 def optimize_advanced(_input_data: InputData, _orders: Orders) -> WorkPlan:
     advanced_optimizer = AdvancedOptimizer(_input_data, _orders)
-    best_result = 0
-    best_plan = None
-    for ec in range(1, 10):
-        for ac in range(1, 10):
-            current_plan = advanced_optimizer.optimize(ec / 10.0, ac / 10.0)
-            current_earning = only_calculate_earning(_orders, current_plan, _input_data)
-            print(f"Ec: {ec / 10.0}, Ac: {ac / 10.0}, Earning: {current_earning}")
-            if current_earning > best_result:
-                best_result = current_earning
-                best_plan = current_plan
-                
-    return best_plan
+    return advanced_optimizer.optimize(100, 0.2)
 
 if __name__ == "__main__":
     print("Начинаем проверку")
@@ -58,6 +47,5 @@ if __name__ == "__main__":
     print(result)
 
     create_gantt_chart(orders, work_plan, input_data)
-    
 
-    
+

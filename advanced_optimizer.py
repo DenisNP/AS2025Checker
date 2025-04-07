@@ -1,5 +1,8 @@
 from datetime import date, timedelta
 from typing import List
+import concurrent.futures
+import os
+import time
 
 from checker import only_calculate_earning
 from models import Orders, InputData, WorkPlan
@@ -21,13 +24,15 @@ class AdvancedOptimizer:
         # подготовим оценку ценности работников
         self._construct_workers_value()
 
-    def optimize(self, earnings_coefficient: float, availability_coefficient: float) -> WorkPlan:
+    def optimize(self, orders_window: int, workers_step: float, earning_coefficient: float = 1.0) -> WorkPlan:
+        # Засекаем время начала работы
+        start_time = time.time()
+
         work_plan_dict: dict[str, AssignedTask] = {}
-        prev_work_plan_dict: dict[str, AssignedTask] = {}
-        prev_earning = 0
         order_by_task_id: dict[str, Order] = {}
         tasks_by_id: dict[str, Task] = {}
         orders = []
+        global_best_earning = float('-inf')
 
         for order in self.orders.root:
             orders.append(order)
@@ -35,44 +40,123 @@ class AdvancedOptimizer:
                 order_by_task_id[task.id] = order
                 tasks_by_id[task.id] = task
 
+        # сортируем заказы по прибыли
+        orders = sorted(orders, key=lambda o: self._get_order_score(o, earning_coefficient), reverse=True)
+
         # разбираем задачи до тех пор, пока не поставим все
         while len(orders) > 0:
-            order = max(orders, key=lambda o: self._get_order_score(order, earnings_coefficient))
-            orders.remove(order)
-
-            for task in order.tasks:
-                # проверяем, все ли задачи, от которых зависит эта, уже поставлены, и ищем допустимую дату
-                min_date = minimum_allowed_date_by_dependencies(task, work_plan_dict, self.input_data.currentDate)
-    
-                if min_date is None:
-                    continue
-    
-                min_date = closest_workday(min_date, self.input_data.holidays)
-    
-                # получаем оценки работников для этой задачи
-                workers_scores = self._get_workers_scores_for_task(task, work_plan_dict, availability_coefficient, min_date)
-                
-                # получаем идентификатор работника с максимальным баллом
-                worker_id = max(workers_scores, key=workers_scores.get)
-                worker = next(w for w in self.input_data.workers if w.id == worker_id)
-    
-                # получаем дату, когда этот работник может выполнить задачу
-                start_date = self._get_worker_date_availability(worker, task, min_date, work_plan_dict)
-                # считаем дату конца
-                end_date = calculate_task_end_date(start_date, task.baseDuration, worker.productivity, self.input_data.holidays)
-                # добавляем задачу в план
-                work_plan_dict[task.id] = AssignedTask(taskId=task.id, workerId=worker_id, start=start_date, end=end_date)
-
-            # проверяем, прибылен ли заказ
-            current_earning = only_calculate_earning(self.orders, WorkPlan(work_plan_dict.values()), self.input_data);
-            if current_earning <= prev_earning:
-                work_plan_dict = prev_work_plan_dict.copy()
+            orders_selected = []
+            if len(orders) > orders_window:
+                orders_selected = orders[:orders_window].copy()
             else:
-                prev_earning = current_earning
-                prev_work_plan_dict = work_plan_dict.copy()
+                orders_selected = orders.copy()
+
+            best_order = None
+            best_earning_for_order = global_best_earning
+            best_work_plan = None
+
+            # перебираем окно заказов
+            while len(orders_selected) > 0:
+                order = orders_selected.pop(0)
+                temp_work_plan_for_order = work_plan_dict.copy()
+
+                # ищем лучшее распределение по работникам для этого заказа
+                current_best_earning, current_best_work_plan, best_availability_coefficient = self._select_best_workers(order, temp_work_plan_for_order, workers_step)
+
+                # Если текущий результат лучше лучшего найденного ранее, обновляем лучший результат
+                if current_best_earning > best_earning_for_order:
+                    best_earning_for_order = current_best_earning
+                    best_order = order
+                    best_work_plan = current_best_work_plan.copy()
+                    print(f"Earning: {best_earning_for_order:,.2f}".replace(',', ' '), f"orders left: {len(orders)}, availability coefficient: {best_availability_coefficient:.1f}")
+
+            if best_order is None:
+                break
+            else:
+                orders.remove(best_order)
+                work_plan_dict = best_work_plan.copy()
+                global_best_earning = best_earning_for_order
 
         sorted_tasks = sorted(work_plan_dict.values(), key=lambda x: x.start)
+
+        # Вычисляем время работы в секундах
+        end_time = time.time()
+        execution_time = end_time - start_time
+        print(f"Время работы optimize: {execution_time:.2f} секунд")
+
         return WorkPlan(sorted_tasks)
+
+    def _select_best_workers(self, order: Order, work_plan_dict: dict[str, AssignedTask], workers_step: float) -> (float, dict[str, AssignedTask], float):
+        # ищем лучшее распределение по работникам для этого заказа
+        best_earning_for_worker = float('-inf')
+        best_work_plan_for_worker = None
+        best_availability_coefficient = 0
+
+        # Создаем список всех коэффициентов доступности для перебора
+        availability_coefficients = [i * workers_step for i in range(int(1/workers_step) + 1)]
+
+        # Функция для обработки одного коэффициента доступности
+        def process_coefficient(coefficient):
+            # Создаем копию текущего плана работ
+            temp_work_plan = work_plan_dict.copy()
+
+            # Пытаемся разместить заказ с текущим коэффициентом
+            self._place_order(order, temp_work_plan, coefficient)
+
+            # Проверяем, прибылен ли заказ
+            current_earning = only_calculate_earning(self.orders, WorkPlan(temp_work_plan.values()), self.input_data)
+
+            return coefficient, current_earning, temp_work_plan
+
+        # Определяем количество потоков (используем количество ядер процессора)
+        max_workers = len(availability_coefficients)
+
+        # Запускаем параллельную обработку
+        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+            # Запускаем задачи и получаем результаты
+            future_to_coefficient = {executor.submit(process_coefficient, coefficient): coefficient
+                                    for coefficient in availability_coefficients}
+
+            # Обрабатываем результаты по мере их завершения
+            for future in concurrent.futures.as_completed(future_to_coefficient):
+                coefficient, current_earning, temp_work_plan = future.result()
+
+                # Если текущий результат лучше, сохраняем его
+                if current_earning > best_earning_for_worker:
+                    best_earning_for_worker = current_earning
+                    best_work_plan_for_worker = temp_work_plan
+                    best_availability_coefficient = coefficient
+
+        return best_earning_for_worker, best_work_plan_for_worker, best_availability_coefficient
+
+    def _place_order(self, order: Order, work_plan_dict: dict[str, AssignedTask], availability_coefficient: float):
+        tasks_to_place = order.tasks.copy()
+
+        while len(tasks_to_place) > 0:
+            task = tasks_to_place.pop(0)
+
+            # проверяем, все ли задачи, от которых зависит эта, уже поставлены, и ищем допустимую дату
+            min_date = minimum_allowed_date_by_dependencies(task, work_plan_dict, self.input_data.currentDate)
+
+            if min_date is None:
+                tasks_to_place.append(task)
+                continue
+
+            min_date = closest_workday(min_date, self.input_data.holidays)
+
+            # получаем оценки работников для этой задачи
+            workers_scores = self._get_workers_scores_for_task(task, work_plan_dict, availability_coefficient, min_date)
+
+            # получаем идентификатор работника с максимальным баллом
+            worker_id = max(workers_scores, key=workers_scores.get)
+            worker = next(w for w in self.input_data.workers if w.id == worker_id)
+
+            # получаем дату, когда этот работник может выполнить задачу
+            start_date = self._get_worker_date_availability(worker, task, min_date, work_plan_dict)
+            # считаем дату конца
+            end_date = calculate_task_end_date(start_date, task.baseDuration, worker.productivity, self.input_data.holidays)
+            # добавляем задачу в план
+            work_plan_dict[task.id] = AssignedTask(taskId=task.id, workerId=worker_id, start=start_date, end=end_date)
 
     def _get_workers_scores_for_task(self, task: Task, work_plan_dict: dict[str, AssignedTask], availability_coefficient: float, min_date: date) -> dict[str, float]:
         scores = {}
@@ -84,7 +168,7 @@ class AdvancedOptimizer:
                 scores[worker.id] = availability_coefficient * av_score + (1 - availability_coefficient) * (1.0 - value_score)
             else:
                 scores[worker.id] = float('-inf')
-        
+
         return scores
 
     def _worker_availability_scores_for_task(self, task: Task, work_plan_dict: dict[str, AssignedTask], min_date: date) -> dict[str, float]:
@@ -112,7 +196,7 @@ class AdvancedOptimizer:
         # если нет задач или влезает до первой, ставим в min_date
         if len(worker_tasks) == 0 or worker_tasks[0].start > assumed_task_end:
             return assumed_task_start
-        
+
         # если одна задача, смотрим, влезет ли до неё или после
         if len(worker_tasks) == 1:
             return closest_workday(max(min_date, worker_tasks[0].end + timedelta(days=1)), self.input_data.holidays)
@@ -141,7 +225,7 @@ class AdvancedOptimizer:
 
         # влияние задачи это число задач, которые от неё зависят, а вторым приоритетом число её собственных зависимостей
         #task_influence = order_dependants_by_task_id[task.id] * 1000 + len(task.dependsOn)
-        
+
         return len(task.dependsOn)
 
     def _normalize_values(self, values: dict) -> dict:
@@ -162,7 +246,7 @@ class AdvancedOptimizer:
                 _orders.append(order)
                 self.orders_earning[order.id] = earning
                 self.orders_importance[order.id] = (order.deadline - self.input_data.currentDate).days
-        # нормализуем orders_earning        
+        # нормализуем orders_earning
         self.orders_earning = self._normalize_values(self.orders_earning)
         self.orders_importance = self._normalize_values(self.orders_importance)
         self.orders_importance = {k: 1.0 - v for k, v in self.orders_importance.items()}
@@ -197,13 +281,13 @@ class AdvancedOptimizer:
                 if task.workTypeId == work_type_id:
                     total_days += task.baseDuration
 
-        # теперь посчитаем общую продуктивность работников, которые могут делать этот тип задач            
+        # теперь посчитаем общую продуктивность работников, которые могут делать этот тип задач
         total_productivity = 0
         for worker in self.input_data.workers:
             if work_type_id in worker.workTypeIds:
                 total_productivity += worker.productivity
 
-        return total_days / total_productivity       
+        return total_days / total_productivity
 
     def _estimated_total_order_earning(self, order: Order) -> float:
         duration = calculate_order_duration(order, self.input_data)
