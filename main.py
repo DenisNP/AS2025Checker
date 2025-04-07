@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     print(f"Всего заказов: {len(orders.root)}")
 
-    mode = 4
+    mode = 1
 
     if mode == 1:
         work_plan = TypeAdapter(WorkPlan).validate_python(load_json("work_plan.json"))
