@@ -3,7 +3,7 @@ from datetime import date, timedelta
 from pathlib import Path
 from typing import List, Any, Dict, Optional
 from math import ceil
-from models import Orders, WorkPlan, InputData, TaskDetails
+from models import Orders, WorkPlan, InputData, TaskDetails, Worker
 from models.orders import Order, Task
 from models.work_plan import AssignedTask
 
@@ -42,7 +42,7 @@ def aggregate_work_plan(orders: Orders, work_plan: WorkPlan, input_data: InputDa
     return result, total_days
 
 
-def calculate_order_duration(order: Order, input_data: InputData | None = None) -> int:
+def calculate_order_duration(order: Order, input_data: InputData, force_workers: Dict[str, Worker] | None = None) -> int:
     """
     Вычисляет длительность заказа с учетом зависимостей между задачами.
     """
@@ -58,7 +58,10 @@ def calculate_order_duration(order: Order, input_data: InputData | None = None) 
         task = next(t for t in order.tasks if t.id == task_id)
         task_duration = task.baseDuration
         if input_data is not None:
-            task_duration = ceil(task.baseDuration / top_productivity_by_work_type(task, input_data))
+            productivity = force_workers[task_id].productivity \
+                if force_workers is not None \
+                else top_productivity_by_work_type(task, input_data)
+            task_duration = ceil(task.baseDuration / productivity)
         
         # Если нет зависимостей, возвращаем базовую длительность
         if not task.dependsOn:
